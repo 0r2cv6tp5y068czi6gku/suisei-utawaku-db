@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sayakagaoqiao403-rgb.github.io/suisei-utawaku-db/sitemap.xml

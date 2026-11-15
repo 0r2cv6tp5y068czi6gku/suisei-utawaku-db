@@ -1,0 +1,5060 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>星街すいせい 歌枠データベース（非公式）</title>
+<meta name="description" content="星街すいせいの歌枠で歌われた楽曲とタイムスタンプをまとめた非公式ファンサイト。配信54件・歌唱曲590曲を収録。曲名から横断検索して、YouTubeの歌い出し場面へワンクリックでジャンプできます。">
+<meta property="og:title" content="星街すいせい 歌枠データベース（非公式）">
+<meta property="og:description" content="星街すいせいの歌枠の楽曲とタイムスタンプをまとめた非公式ファンサイト。配信54件・歌唱曲590曲を曲名で横断検索できます。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070d2b">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=M+PLUS+Rounded+1c:wght@700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"星街すいせい 歌枠データベース（非公式）","description":"星街すいせいの歌枠で歌われた楽曲とタイムスタンプをまとめた非公式ファンサイト。","inLanguage":"ja"}</script>
+<style>
+:root{
+  --bg:#070d2b; --bg2:#0b153d; --card:#101a42; --card2:#16225a; --line:rgba(148,197,255,.22);
+  --ink:#eef4ff; --muted:#a9bde0; --faint:#7f93bd;
+  --cyan:#56ccf2; --sky:#4f8cff; --aqua:#7ef0d4; --gold:#ffd166; --pink:#ffb3d9;
+  --radius:18px; --shadow:0 12px 32px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important; transition:none!important} }
+body{margin:0;background:linear-gradient(180deg,#05081f 0%,#0a1236 34%,#0d1a4a 62%,#08102e 100%);color:var(--ink);font-family:"Noto Sans JP",system-ui,-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--cyan)}
+button,[role="button"],select,summary,input:not([type="checkbox"]){min-height:44px}
+img{display:block;max-width:100%}
+.wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+/* stars */
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+#stars i{position:absolute;border-radius:50%;background:#fff;opacity:.7;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.25;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
+.comet{position:fixed;top:12%;left:-10%;width:220px;height:2px;background:linear-gradient(90deg,transparent,#aee9ff,#fff);border-radius:99px;transform:rotate(-18deg);opacity:0;pointer-events:none;z-index:0;animation:shoot 9s ease-in infinite}
+.comet::after{content:"";position:absolute;right:-2px;top:-3px;width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 18px 6px rgba(140,220,255,.8)}
+@keyframes shoot{0%,72%{opacity:0;transform:translate(0,0) rotate(-18deg)}76%{opacity:1}88%,100%{opacity:0;transform:translate(72vw,26vh) rotate(-18deg)}}
+header,main,footer{position:relative;z-index:1}
+/* hero */
+.hero{padding:34px 0 10px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(86,204,242,.12);border:1px solid var(--line);color:#cfeaff;padding:6px 14px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.02em}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--aqua);box-shadow:0 0 10px var(--aqua)}
+.hero h1{font-family:"M PLUS Rounded 1c","Noto Sans JP",sans-serif;font-size:clamp(30px,6.4vw,52px);line-height:1.25;margin:16px 0 6px;font-weight:800;letter-spacing:.01em}
+.hero h1 .grad{background:linear-gradient(92deg,#8fd8ff 0%,#56ccf2 35%,#a78bfa 78%,#ffb3d9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:15px;color:var(--muted);max-width:680px;margin:10px auto 0}
+.hero .unofficial{margin-top:12px;font-size:13px;color:var(--faint)}
+.stats{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:22px 0 6px}
+.stat{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;padding:10px 16px;min-width:104px;backdrop-filter:blur(6px)}
+.stat b{display:block;font-size:22px;line-height:1.2;color:#fff;font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+/* nav chips */
+.quicknav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 4px}
+.quicknav a{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border-radius:99px;background:#fff;color:#0a1236;font-weight:800;font-size:14px;text-decoration:none}
+.quicknav a.ghost{background:rgba(255,255,255,.08);color:var(--ink);border:1px solid var(--line)}
+/* sections */
+section{padding:26px 0 6px}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+.sec-head h2{font-size:22px;margin:0;font-weight:900}
+.sec-head p{margin:0;color:var(--muted);font-size:13px}
+.sec-head .star{color:var(--gold)}
+/* features */
+.feat{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:720px){.feat{grid-template-columns:repeat(3,1fr)}}
+.feat article{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.feat .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#1d3a8a,#0e7490);margin-bottom:10px}
+.feat h3{margin:0 0 6px;font-size:16px}
+.feat p{margin:0;font-size:14px;color:var(--muted)}
+/* pickup */
+.pick{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:820px){.pick{grid-template-columns:1.25fr .95fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.panel .body{padding:16px 18px 18px}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--cyan);text-transform:uppercase}
+.latest img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.latest h3{font-size:17px;line-height:1.55;margin:8px 0 6px}
+.meta{font-size:13px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 20px;border-radius:12px;border:0;font-weight:800;font-size:15px;cursor:pointer;text-decoration:none}
+.btn-primary{background:linear-gradient(92deg,#2f7bff,#06b6d4);color:#fff;width:100%;margin-top:14px}
+.btn-line{background:rgba(255,255,255,.07);color:var(--ink);border:1px solid var(--line)}
+.top-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.top-list li{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:10px 12px;color:var(--ink);cursor:pointer;font:inherit}
+.top-list li:hover{background:rgba(86,204,242,.12)}
+.rank{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:900;background:#22306e;color:#cfeaff;font-size:14px}
+.rank.r1{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#231a00}
+.rank.r2{background:linear-gradient(135deg,#94a3b8,#e2e8f0);color:#111827}
+.rank.r3{background:linear-gradient(135deg,#b45309,#f59e0b);color:#fff}
+.top-list .t{font-weight:800;font-size:15px;line-height:1.4}
+.top-list .a{font-size:12px;color:var(--muted)}
+.top-list .c{margin-left:auto;flex:none;font-weight:900;color:var(--cyan);font-variant-numeric:tabular-nums}
+/* search */
+.searchbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.search-row{display:flex;gap:10px}
+.search-row input{flex:1;min-width:0;height:52px;border-radius:14px;border:1px solid var(--line);background:#0a1236;color:#fff;padding:0 16px;font-size:17px}
+.search-row input::placeholder{color:var(--faint)}
+.search-row button{height:52px;padding:0 20px;border-radius:14px;border:0;background:linear-gradient(92deg,#2f7bff,#06b6d4);color:#fff;font-weight:900;font-size:15px;cursor:pointer;white-space:nowrap}
+.hint{font-size:13px;color:var(--muted);margin:10px 2px 0}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.chips button{min-height:40px;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font-size:13px;font-weight:700;cursor:pointer}
+.results-head{display:flex;justify-content:space-between;align-items:baseline;margin:18px 2px 10px;gap:12px}
+.results-head b{font-size:16px}
+.results-head span{font-size:13px;color:var(--muted)}
+.song-results{display:grid;gap:10px}
+.song-hit{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.song-hit:hover{border-color:rgba(86,204,242,.6)}
+.song-hit .no{flex:none;width:44px;height:44px;border-radius:12px;background:#1a2a66;display:grid;place-items:center;font-weight:900;font-size:13px;color:#9fd8ff;text-align:center;line-height:1.2}
+.song-hit .main{min-width:0;flex:1}
+.song-hit .title{font-weight:800;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song-hit .from{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.song-hit .play{flex:none;display:flex;flex-direction:column;align-items:center;gap:0;color:var(--cyan);font-weight:900;font-size:12px}
+.song-hit .play .tri{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2f7bff,#06b6d4);color:#fff;display:grid;place-items:center;font-size:15px}
+.time{font-variant-numeric:tabular-nums;color:var(--gold);font-weight:700;font-size:12px}
+.empty{padding:28px 16px;text-align:center;color:var(--muted);background:rgba(255,255,255,.04);border:1px dashed var(--line);border-radius:16px;font-size:14px}
+.more-btn{width:100%;margin-top:12px}
+/* streams */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.filters button{min-height:42px;padding:6px 16px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);font-weight:700;font-size:14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:#fff;color:#0a1236;border-color:#fff}
+.stream-list{display:grid;gap:14px}
+.stream{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.stream-top{display:grid;grid-template-columns:132px 1fr;gap:0}
+@media(min-width:640px){.stream-top{grid-template-columns:240px 1fr}}
+.stream-top img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/9}
+.stream-info{padding:12px 14px;min-width:0}
+.stream-info .date{font-size:12px;color:var(--cyan);font-weight:800;letter-spacing:.04em}
+.stream-info h3{font-size:15px;line-height:1.55;margin:4px 0 6px}
+@media(min-width:640px){.stream-info h3{font-size:17px}}
+.stream-info .cnt{font-size:12.5px;color:var(--muted)}
+.stream-actions{display:flex;gap:8px;flex-wrap:wrap;padding:0 14px 14px}
+.stream-actions .toggle{flex:1}
+.setlist{display:none;border-top:1px solid var(--line);padding:6px 10px 12px}
+.setlist.open{display:block}
+.setlist ol{list-style:none;margin:0;padding:0}
+.setlist li a{display:flex;align-items:center;gap:12px;padding:11px 10px;border-radius:12px;text-decoration:none;color:var(--ink);min-height:48px}
+.setlist li a:hover{background:rgba(86,204,242,.1)}
+.setlist .ord{flex:none;width:30px;text-align:center;color:var(--faint);font-weight:800;font-size:13px;font-variant-numeric:tabular-nums}
+.setlist .name{flex:1;min-width:0;font-weight:600;font-size:15px}
+.setlist .go{flex:none;color:var(--cyan);font-weight:800;font-size:12px;display:flex;align-items:center;gap:6px}
+/* stats */
+.bars{display:grid;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+.bar-row{display:grid;grid-template-columns:52px 1fr 86px;gap:10px;align-items:center;font-size:13px}
+.bar-track{height:12px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+.bar-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#2f7bff,#56ccf2,#7ef0d4)}
+.bar-row b{text-align:right;font-variant-numeric:tabular-nums}
+footer{padding:34px 0 44px;color:var(--muted);font-size:13px}
+footer .box{border-top:1px solid var(--line);padding-top:18px}
+.small{font-size:12.5px;color:var(--faint)}
+#toTop{position:fixed;right:14px;bottom:14px;z-index:5;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#16225a;color:#fff;font-size:18px;cursor:pointer;box-shadow:var(--shadow)}
+</style>
+</head>
+<body>
+<div id="stars" aria-hidden="true"></div>
+<div class="comet" aria-hidden="true"></div>
+
+<header class="wrap hero">
+  <span class="badge"><span class="dot"></span> 星街すいせい ・ 歌枠アーカイブ</span>
+  <h1>星街すいせい<br><span class="grad">歌枠データベース</span></h1>
+  <p class="sub">星街すいせいの歌枠で歌われた楽曲とタイムスタンプをまとめたデータベースです。気になる曲名をクリック（タップ）すると、YouTubeの歌い出し場面へそのままジャンプできます。「あの曲、どの配信で歌ったっけ？」を、すぐに見つけられます。</p>
+  <p class="unofficial">※ ファンが運営する非公式サイトです。ホロライブプロダクション／カバー株式会社および星街すいせいさん公式とは関係ありません。</p>
+  <div class="stats" aria-label="収録データ">
+    <div class="stat"><b id="statStreams">54</b><span>総配信数</span></div>
+    <div class="stat"><b id="statSongs">590</b><span>総歌唱曲数（延べ）</span></div>
+    <div class="stat"><b id="statUnique">412</b><span>ユニーク曲数</span></div>
+    <div class="stat"><b id="statPeriod" style="font-size:15px;padding-top:5px">2020.06.07 – 2026.04.14</b><span>収録期間</span></div>
+  </div>
+  <nav class="quicknav" aria-label="ページ内メニュー">
+    <a href="#search">♪ 曲を探す</a>
+    <a class="ghost" href="#streams">配信一覧を見る</a>
+    <a class="ghost" href="#pickup">ピックアップ</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="feat-h">
+    <div class="sec-head"><h2 id="feat-h"><span class="star">✦</span> このサイトでできること</h2></div>
+    <div class="feat">
+      <article>
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="#aee9ff" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="#aee9ff" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>曲から探す</h3>
+        <p>曲名の一部を入れるだけで、全54配信・590曲を横断検索。「群青を歌った配信はどれ？」が一発で分かります。</p>
+      </article>
+      <article>
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#aee9ff" stroke-width="2"/><path d="M10 8.5L16 12L10 15.5V8.5Z" fill="#aee9ff"/></svg></div>
+        <h3>ワンクリックで頭出し</h3>
+        <p>すべての曲に歌い出しタイムスタンプ付きリンクを用意。探して、押して、すぐ聴けます。シークする手間はありません。</p>
+      </article>
+      <article>
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5.5C6.5 4 9 4 12 5.5C15 4 17.5 4 20 5.5V19C17.5 17.5 15 17.5 12 19C9 17.5 6.5 17.5 4 19V5.5Z" stroke="#aee9ff" stroke-width="2" stroke-linejoin="round"/><path d="M12 5.5V19" stroke="#aee9ff" stroke-width="2"/></svg></div>
+        <h3>過去の歌枠をふりかえり</h3>
+        <p>2020年6月から2026年4月まで、配信ごとにセットリストを曲順どおりに収録。思い出の歌枠をたどり直せます。</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="pickup" aria-labelledby="pick-h">
+    <div class="sec-head"><h2 id="pick-h"><span class="star">✦</span> ピックアップ</h2><p>最新の歌枠と、よく歌う曲</p></div>
+    <div class="pick">
+      <article class="panel latest">
+        <img id="latestImg" src="assets/thumbs/s054.jpg" alt="最新の歌枠「【歌枠 / 告知アリ】久しぶりのホロオリ曲縛り‼ 【星街すいせい】」のYouTubeサムネイル" width="480" height="360">
+        <div class="body">
+          <span class="kicker">Latest — 最新の歌枠</span>
+          <h3 id="latestTitle">【歌枠 / 告知アリ】久しぶりのホロオリ曲縛り‼ 【星街すいせい】</h3>
+          <div class="meta"><span id="latestDate">📅 2026年4月14日</span><span id="latestCount">♪ 全9曲</span><span>ホロライブオリジナル曲縛り</span></div>
+          <a class="btn btn-primary" id="latestLink" href="https://www.youtube.com/live/HpP6KdeJx7E?si=K-7vptIOrBStYvOW" target="_blank" rel="noopener">▶ YouTubeで配信を開く</a>
+          <button class="btn btn-line" id="latestOpen" type="button" data-open-stream="s054" style="width:100%;margin-top:8px">セットリストを見る（9曲）</button>
+        </div>
+      </article>
+      <article class="panel">
+        <div class="body">
+          <span class="kicker">Ranking — よく歌う曲 TOP</span>
+          <p style="margin:6px 0 0;font-size:13px;color:var(--muted)">タップすると、その曲が歌われた配信をすべて表示します。</p>
+          <ul class="top-list" id="topList"></ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="search" aria-labelledby="search-h">
+    <div class="sec-head"><h2 id="search-h"><span class="star">✦</span> 曲名で探す</h2><p>全配信を横断検索</p></div>
+    <div class="searchbox">
+      <form class="search-row" id="searchForm" role="search">
+        <label class="small" for="q" style="position:absolute;left:-9999px">曲名で検索</label>
+        <input id="q" type="search" placeholder="曲名を入力（例：群青、Mela!、廻廻奇譚）" autocomplete="off" enterkeyhint="search">
+        <button type="submit">検索</button>
+      </form>
+      <p class="hint">曲名の一部だけでも検索できます。結果の曲をタップすると、YouTubeの歌い出し位置から再生されます。</p>
+      <div class="chips" id="chips" aria-label="人気の曲ですぐ探す"></div>
+    </div>
+    <div class="results-head"><b id="resTitle">よく歌われている曲</b><span id="resCount"></span></div>
+    <div class="song-results" id="results"></div>
+    <button class="btn btn-line more-btn" id="moreBtn" type="button" hidden>もっと見る</button>
+  </section>
+
+  <section id="streams" aria-labelledby="streams-h">
+    <div class="sec-head"><h2 id="streams-h"><span class="star">✦</span> 配信ごとのセットリスト</h2><p id="streamCountLabel"></p></div>
+    <div class="filters" id="yearFilters" role="group" aria-label="年で絞り込み"></div>
+    <div class="stream-list" id="streamList"></div>
+    <button class="btn btn-line more-btn" id="moreStreams" type="button" hidden>さらに配信を表示</button>
+  </section>
+
+  <section aria-labelledby="stats-h">
+    <div class="sec-head"><h2 id="stats-h"><span class="star">✦</span> 収録データの内訳</h2></div>
+    <div class="bars" id="yearBars" aria-label="年別の歌唱曲数"></div>
+    <p class="small" style="margin-top:10px">総配信数 54件 ／ 総歌唱曲数 590曲（延べ）／ ユニーク曲数 412曲 ／ 収録期間 2020年6月7日〜2026年4月14日。1配信あたり平均 約10.9曲です。</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="box">
+    <p><strong style="color:var(--ink)">星街すいせい 歌枠データベース（非公式）</strong> — ファンが個人で運営する非公式のファンサイトです。配信・楽曲の権利は各権利者に帰属します。各曲のリンク先はYouTube上の公式配信です。</p>
+    <p class="small">データ: Googleスプレッドシート『星街すいせい歌枠』（配信54件・曲590件、2020-06-07〜2026-04-14）。このサイトは、同スプレッドシートから出力したJSONをもとに構築しています（JSON生成日：<span id="genDate">2026-11-14</span>）。曲名表記はシートのデータに準拠し、「アイスクリーム シンドローム」は公式表記に合わせています。</p>
+  </div>
+</footer>
+<button id="toTop" type="button" aria-label="ページ上部へ戻る">↑</button>
+
+<!-- データソース: Googleスプレッドシート『星街すいせい歌枠』から出力したJSON。シート更新時はこのブロック（と assets/data.json）を新しいJSONに差し替えてください。 -->
+<script type="application/json" id="site-data">
+{
+ "site": "星街すいせい 歌枠データベース（非公式）",
+ "streamer": "星街すいせい",
+ "source": "Google Sheets: 星街すいせい歌枠 (1qHeB63jhI8F53kTnTA9Srzq7q9EnkKi3J5Zb-6E2h3I)",
+ "generatedAt": "2026-11-14",
+ "streams": [
+  {
+   "id": "s054",
+   "date": "2026/04/14",
+   "title": "【歌枠 / 告知アリ】久しぶりのホロオリ曲縛り‼ 【星街すいせい】",
+   "url": "https://www.youtube.com/live/HpP6KdeJx7E?si=K-7vptIOrBStYvOW",
+   "songs": [
+    {
+     "order": 1,
+     "title": "アトリェ",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=XmctK4hZ56hG_eN3&t=347",
+     "timestampSeconds": 347,
+     "timestamp": "5:47"
+    },
+    {
+     "order": 2,
+     "title": "アワータイムイエロー",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=7fMOY763F7oEtQBh&t=642",
+     "timestampSeconds": 642,
+     "timestamp": "10:42"
+    },
+    {
+     "order": 3,
+     "title": "Do U",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=-SAHusFUGDZ4jcSu&t=942",
+     "timestampSeconds": 942,
+     "timestamp": "15:42"
+    },
+    {
+     "order": 4,
+     "title": "ナイトルーブ",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=xcdE5Ux9wbDotOop&t=1222",
+     "timestampSeconds": 1222,
+     "timestamp": "20:22"
+    },
+    {
+     "order": 5,
+     "title": "MAKE IT,BREAK IT",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=d92sCL-Go2GkB-7z&t=1594",
+     "timestampSeconds": 1594,
+     "timestamp": "26:34"
+    },
+    {
+     "order": 6,
+     "title": "High Tide",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=JMD5sVjxRXTDfa7S&t=1836",
+     "timestampSeconds": 1836,
+     "timestamp": "30:36"
+    },
+    {
+     "order": 7,
+     "title": "ラヴレター",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=J7ecB5lmq8TNj8T2&t=2288",
+     "timestampSeconds": 2288,
+     "timestamp": "38:08"
+    },
+    {
+     "order": 8,
+     "title": "シャルイース",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=n3QR9cyyYfi5j1sr&t=2876",
+     "timestampSeconds": 2876,
+     "timestamp": "47:56"
+    },
+    {
+     "order": 9,
+     "title": "キスだけでいいからね",
+     "timingUrl": "https://www.youtube.com/live/HpP6KdeJx7E?si=yaMiHuJJRo2ghWPR&t=3244",
+     "timestampSeconds": 3244,
+     "timestamp": "54:04"
+    }
+   ],
+   "songCount": 9
+  },
+  {
+   "id": "s053",
+   "date": "2025/10/24",
+   "title": "【歌枠 / 大告知アリ！】鼻ドスを乗り越えてうたう‼ 告知はみんな待望のアレ【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/WNUJdRsBi1o?si=46BimW49v9cx_vNR",
+   "songs": [
+    {
+     "order": 1,
+     "title": "東京フラッシュ",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=k5H9l2cjZ_9IQ1pH&t=252",
+     "timestampSeconds": 252,
+     "timestamp": "4:12"
+    },
+    {
+     "order": 2,
+     "title": "Sleepwalk",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=SME71B0F_b4W5Gs5&t=623",
+     "timestampSeconds": 623,
+     "timestamp": "10:23"
+    },
+    {
+     "order": 3,
+     "title": "Drop",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=JQ6Ng7Vgi5dQHx_E&t=839",
+     "timestampSeconds": 839,
+     "timestamp": "13:59"
+    },
+    {
+     "order": 4,
+     "title": "SADSONG",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=QMogTz_XMH-OcbsZ&t=1053",
+     "timestampSeconds": 1053,
+     "timestamp": "17:33"
+    },
+    {
+     "order": 5,
+     "title": "Calc",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=497TLp4FWE39qH5W&t=1423",
+     "timestampSeconds": 1423,
+     "timestamp": "23:43"
+    },
+    {
+     "order": 6,
+     "title": "DEADPOOL",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=LmIGG5gWqDj1au1_&t=1883",
+     "timestampSeconds": 1883,
+     "timestamp": "31:23"
+    },
+    {
+     "order": 7,
+     "title": "白日",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=nDv0VmOAwEHsAVz2&t=2167",
+     "timestampSeconds": 2167,
+     "timestamp": "36:07"
+    },
+    {
+     "order": 8,
+     "title": "スーパーノヴァ",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=lc8TFdkLUsBCaf59&t=2545",
+     "timestampSeconds": 2545,
+     "timestamp": "42:25"
+    },
+    {
+     "order": 9,
+     "title": "怪獣の花唄",
+     "timingUrl": "https://www.youtube.com/live/WNUJdRsBi1o?si=N3bCIBiYfMSYhitA&t=2856",
+     "timestampSeconds": 2856,
+     "timestamp": "47:36"
+    }
+   ],
+   "songCount": 9
+  },
+  {
+   "id": "s052",
+   "date": "2025/03/12",
+   "title": "【歌枠】え・・・？歌枠・・・！？🎤【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=BhAXpU6iZZIseOxg",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Rumor",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=PZE_ETCM1MFiFZjU&t=523",
+     "timestampSeconds": 523,
+     "timestamp": "8:43"
+    },
+    {
+     "order": 2,
+     "title": "Fallen",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=4jyRHSCgemnaYHcw&t=817",
+     "timestampSeconds": 817,
+     "timestamp": "13:37"
+    },
+    {
+     "order": 3,
+     "title": "ハイド・アンド・シーク",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=punePrvbcFXXxQ3N&t=1214",
+     "timestampSeconds": 1214,
+     "timestamp": "20:14"
+    },
+    {
+     "order": 4,
+     "title": "初KO勝ち",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=LnkZKxXw2kNxtHrn&t=1532",
+     "timestampSeconds": 1532,
+     "timestamp": "25:32"
+    },
+    {
+     "order": 5,
+     "title": "Lost and Found",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=O07GQR2zoD1Bebf5&t=1827",
+     "timestampSeconds": 1827,
+     "timestamp": "30:27"
+    },
+    {
+     "order": 6,
+     "title": "2時間だけのバカンス",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=6WjZtNh-oGGvUQqj&t=2489",
+     "timestampSeconds": 2489,
+     "timestamp": "41:29"
+    },
+    {
+     "order": 7,
+     "title": "氷に閉じ込めて",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=KTbs69DVBUCV8oTD&t=2832",
+     "timestampSeconds": 2832,
+     "timestamp": "47:12"
+    },
+    {
+     "order": 8,
+     "title": "Tómur",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=IOLQT56NJB_91KJB&t=3372",
+     "timestampSeconds": 3372,
+     "timestamp": "56:12"
+    },
+    {
+     "order": 9,
+     "title": "バレリーコ",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=RGQ7ZqcKCa285IS6&t=3726",
+     "timestampSeconds": 3726,
+     "timestamp": "1:02:06"
+    },
+    {
+     "order": 10,
+     "title": "君じゃなきゃダメみたい",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=HofQv0N-sY7UaBEv&t=4128",
+     "timestampSeconds": 4128,
+     "timestamp": "1:08:48"
+    },
+    {
+     "order": 11,
+     "title": "ラストダンス",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=7D33f2fakMkVj6s5&t=4539",
+     "timestampSeconds": 4539,
+     "timestamp": "1:15:39"
+    },
+    {
+     "order": 12,
+     "title": "メルト",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=di5cvJTW2_mmmhmT&t=4879",
+     "timestampSeconds": 4879,
+     "timestamp": "1:21:19"
+    },
+    {
+     "order": 13,
+     "title": "スタンドバイミー",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=bTWD7Ih7K2EWVQel&t=5236",
+     "timestampSeconds": 5236,
+     "timestamp": "1:27:16"
+    },
+    {
+     "order": 14,
+     "title": "ドラ１独走",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=jyDGG70tIriDVW65&t=5728",
+     "timestampSeconds": 5728,
+     "timestamp": "1:35:28"
+    },
+    {
+     "order": 15,
+     "title": "雨とカプチーノ",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=neWGOPbEp59ia5P0&t=6230",
+     "timestampSeconds": 6230,
+     "timestamp": "1:43:50"
+    },
+    {
+     "order": 16,
+     "title": "エイリアンズ",
+     "timingUrl": "https://www.youtube.com/live/6Ak-Wy1MMwA?si=-x-Wtdwjs0pYG9wt&t=6600",
+     "timestampSeconds": 6600,
+     "timestamp": "1:50:00"
+    }
+   ],
+   "songCount": 16
+  },
+  {
+   "id": "s051",
+   "date": "2024/05/05",
+   "title": "【歌枠】帰ってきたからカラオケするぞ～～～🎤✨【ホロライブ / 星街すいせい 】",
+   "url": "https://www.youtube.com/live/nVKsV6bozwM?si=N9itHEbM-i1ZWH1B",
+   "songs": [
+    {
+     "order": 1,
+     "title": "美しい鰭",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=gGjWQefb6eF1bWZC&t=591",
+     "timestampSeconds": 591,
+     "timestamp": "9:51"
+    },
+    {
+     "order": 2,
+     "title": "鬼の宴",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=lIfPYUTHNsIfOKAu&t=946",
+     "timestampSeconds": 946,
+     "timestamp": "15:46"
+    },
+    {
+     "order": 3,
+     "title": "イガク",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=h78-HqVxM4GBxlNv&t=1257",
+     "timestampSeconds": 1257,
+     "timestamp": "20:57"
+    },
+    {
+     "order": 4,
+     "title": "Bling‐Bang-Bang-Born",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=SjBx5b5f_viO7Bgc&t=1555",
+     "timestampSeconds": 1555,
+     "timestamp": "25:55"
+    },
+    {
+     "order": 5,
+     "title": "Departures 〜あなたにおくるアイの歌〜",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=wO5aQbuqlXdl42mP&t=1931",
+     "timestampSeconds": 1931,
+     "timestamp": "32:11"
+    },
+    {
+     "order": 6,
+     "title": "晴る",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=SV0yrjlgMCNsGO02&t=2391",
+     "timestampSeconds": 2391,
+     "timestamp": "39:51"
+    },
+    {
+     "order": 7,
+     "title": "能動的三分間",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=sra1IPqHMGLEepmf&t=2873",
+     "timestampSeconds": 2873,
+     "timestamp": "47:53"
+    },
+    {
+     "order": 8,
+     "title": "夜明けと蛍",
+     "timingUrl": "https://www.youtube.com/live/nVKsV6bozwM?si=e-cdpgBHWkSvNLxL&t=3361",
+     "timestampSeconds": 3361,
+     "timestamp": "56:01"
+    }
+   ],
+   "songCount": 8
+  },
+  {
+   "id": "s050",
+   "date": "2023/09/27",
+   "title": "遂に２００万人目前‼ちょっぴり歌ったりしてみんなで迎えたい‼🎵【ホロライブ / 星街すいせい 】",
+   "url": "https://www.youtube.com/live/SovL_ZOpM_0?si=x_EdFuvfHSRN_dmw",
+   "songs": [
+    {
+     "order": 1,
+     "title": "転がる岩、君に朝が降る\r",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=czPCok4IcDTY1p1-&t=273",
+     "timestampSeconds": 273,
+     "timestamp": "4:33"
+    },
+    {
+     "order": 2,
+     "title": "青春コンプレックス",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=ZWtKACN2v-bZDJbo&t=750",
+     "timestampSeconds": 750,
+     "timestamp": "12:30"
+    },
+    {
+     "order": 3,
+     "title": "あのバンド",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=7IH5zpYp_miTaRsl&t=1017",
+     "timestampSeconds": 1017,
+     "timestamp": "16:57"
+    },
+    {
+     "order": 4,
+     "title": "CH4NCE\r",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=d_5-JBAK_gnxKYfM&t=1405",
+     "timestampSeconds": 1405,
+     "timestamp": "23:25"
+    },
+    {
+     "order": 5,
+     "title": "オトナブルー",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=bg-rJnTQ3PwpK0NJ&t=1799",
+     "timestampSeconds": 1799,
+     "timestamp": "29:59"
+    },
+    {
+     "order": 6,
+     "title": "美少女無罪♡パイレーツ",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=RFR2WSnjzoabXXDE&t=2129",
+     "timestampSeconds": 2129,
+     "timestamp": "35:29"
+    },
+    {
+     "order": 7,
+     "title": "食虫植物",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=bbyMWRjpf8p-aCfi&t=2621",
+     "timestampSeconds": 2621,
+     "timestamp": "43:41"
+    },
+    {
+     "order": 8,
+     "title": "flying",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=YXGRLxVL78C5yd79&t=2901",
+     "timestampSeconds": 2901,
+     "timestamp": "48:21"
+    },
+    {
+     "order": 9,
+     "title": "ギターと孤独と蒼い惑星",
+     "timingUrl": "https://www.youtube.com/live/SovL_ZOpM_0?si=fMhJgeahgS73w6zG&t=3239",
+     "timestampSeconds": 3239,
+     "timestamp": "53:59"
+    }
+   ],
+   "songCount": 9
+  },
+  {
+   "id": "s049",
+   "date": "2023/01/22",
+   "title": "【ショート歌枠】急に始めます【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/2ItXMWsLXgk?si=6XOUhYJDO-7SsbNN",
+   "songs": [
+    {
+     "order": 1,
+     "title": "夜もすがら君想ふ",
+     "timingUrl": "https://www.youtube.com/live/2ItXMWsLXgk?si=tmzCSavA7WhDCHuc&t=471",
+     "timestampSeconds": 471,
+     "timestamp": "7:51"
+    },
+    {
+     "order": 2,
+     "title": "トウキョウ・シャンディ・ランデヴ",
+     "timingUrl": "https://www.youtube.com/live/2ItXMWsLXgk?si=hBes6Y8A2bkudfXc&t=795",
+     "timestampSeconds": 795,
+     "timestamp": "13:15"
+    },
+    {
+     "order": 3,
+     "title": "可愛くてごめん",
+     "timingUrl": "https://www.youtube.com/live/2ItXMWsLXgk?si=CIOiIavFIqZqQW2x&t=1062",
+     "timestampSeconds": 1062,
+     "timestamp": "17:42"
+    },
+    {
+     "order": 4,
+     "title": "イエスタデイ",
+     "timingUrl": "https://www.youtube.com/live/2ItXMWsLXgk?si=hkAYfRLtuNXOftAM&t=1166",
+     "timestampSeconds": 1166,
+     "timestamp": "19:26"
+    },
+    {
+     "order": 5,
+     "title": "すずめ",
+     "timingUrl": "https://www.youtube.com/live/2ItXMWsLXgk?si=sL_65fkh0fX0VH5j&t=1596",
+     "timestampSeconds": 1596,
+     "timestamp": "26:36"
+    },
+    {
+     "order": 6,
+     "title": "丸の内サディスティック",
+     "timingUrl": "https://www.youtube.com/live/2ItXMWsLXgk?si=L25ejN5eoppu-AxD&t=1984",
+     "timestampSeconds": 1984,
+     "timestamp": "33:04"
+    }
+   ],
+   "songCount": 6
+  },
+  {
+   "id": "s048",
+   "date": "2022/12/25",
+   "title": "【#ホロクリスマス歌枠リレー】【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/7NBLkTqH904?si=SH49ds_HJ1JGNw2P",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Overdose",
+     "timingUrl": "https://www.youtube.com/live/7NBLkTqH904?si=mh-QVJJBl_1aw2xL&t=115",
+     "timestampSeconds": 115,
+     "timestamp": "1:55"
+    },
+    {
+     "order": 2,
+     "title": "JUICY",
+     "timingUrl": "https://www.youtube.com/live/7NBLkTqH904?si=7gMrbPQGJG6cbtkx&t=347",
+     "timestampSeconds": 347,
+     "timestamp": "5:47"
+    },
+    {
+     "order": 3,
+     "title": "ブレーメン",
+     "timingUrl": "https://www.youtube.com/live/7NBLkTqH904?si=2O4igCWKJQplS0TZ&t=609",
+     "timestampSeconds": 609,
+     "timestamp": "10:09"
+    },
+    {
+     "order": 4,
+     "title": "ノーダウト",
+     "timingUrl": "https://www.youtube.com/live/7NBLkTqH904?si=0C4KOV5FKR9LcS-f&t=895",
+     "timestampSeconds": 895,
+     "timestamp": "14:55"
+    }
+   ],
+   "songCount": 4
+  },
+  {
+   "id": "s047",
+   "date": "2022/12/01",
+   "title": "【案件歌枠】Spotifyまとめ公開記念！ホロ曲縛り歌枠✨【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/6VXi8oa_wXU?si=H_GvISllncM9MALM",
+   "songs": [
+    {
+     "order": 1,
+     "title": "OURS",
+     "timingUrl": "https://www.youtube.com/live/6VXi8oa_wXU?si=13eELpV3BfeGmFds&t=907",
+     "timestampSeconds": 907,
+     "timestamp": "15:07"
+    },
+    {
+     "order": 2,
+     "title": "ベイビーダンス",
+     "timingUrl": "https://www.youtube.com/live/6VXi8oa_wXU?si=RVk447PN8EV4mw1r&t=1287",
+     "timestampSeconds": 1287,
+     "timestamp": "21:27"
+    },
+    {
+     "order": 3,
+     "title": "Intersection",
+     "timingUrl": "https://www.youtube.com/live/6VXi8oa_wXU?si=DVVpxaJUJ2zLAhWe&t=1533",
+     "timestampSeconds": 1533,
+     "timestamp": "25:33"
+    },
+    {
+     "order": 4,
+     "title": "シャルイース",
+     "timingUrl": "https://www.youtube.com/live/6VXi8oa_wXU?si=PPm5jUxGyt_ZXLuM&t=1899",
+     "timestampSeconds": 1899,
+     "timestamp": "31:39"
+    },
+    {
+     "order": 5,
+     "title": "リルビ",
+     "timingUrl": "https://www.youtube.com/live/6VXi8oa_wXU?si=wIzVIE1qtgqdsAQH&t=2321",
+     "timestampSeconds": 2321,
+     "timestamp": "38:41"
+    },
+    {
+     "order": 6,
+     "title": "Daggy god’s street",
+     "timingUrl": "https://www.youtube.com/live/6VXi8oa_wXU?si=Ug2ZfqlT3M2IcEso&t=2602",
+     "timestampSeconds": 2602,
+     "timestamp": "43:22"
+    },
+    {
+     "order": 7,
+     "title": "FACT",
+     "timingUrl": "https://www.youtube.com/live/6VXi8oa_wXU?si=Pu69ZuIOl1EYLAUI&t=2889",
+     "timestampSeconds": 2889,
+     "timestamp": "48:09"
+    }
+   ],
+   "songCount": 7
+  },
+  {
+   "id": "s046",
+   "date": "2022/09/15",
+   "title": "【歌枠 / お知らせ】５億年ぶりの歌枠ですが大切なお知らせ(怖くない)もある【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/3zd5C_6jMQ4?si=6X3cgJskh3V--4Qi",
+   "songs": [
+    {
+     "order": 1,
+     "title": "アイスクリーム シンドローム",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=PYu_VLXZnlJ6dz1l&t=224",
+     "timestampSeconds": 224,
+     "timestamp": "3:44"
+    },
+    {
+     "order": 2,
+     "title": "CITRUS",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=X1SLwDndEMBfoOyE&t=1018",
+     "timestampSeconds": 1018,
+     "timestamp": "16:58"
+    },
+    {
+     "order": 3,
+     "title": "合縁事変",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=w4jES6Q8KTcOWf85&t=1350",
+     "timestampSeconds": 1350,
+     "timestamp": "22:30"
+    },
+    {
+     "order": 4,
+     "title": "I’m Your Treasure Box＊あなたはマリンせんちょうをたからばこからみつけた。",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=EEFqKUNjVp8llLgV&t=1690",
+     "timestampSeconds": 1690,
+     "timestamp": "28:10"
+    },
+    {
+     "order": 5,
+     "title": "なにやってもうまくいかない",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=kcE7u4fIHfrFRlUi&t=2078",
+     "timestampSeconds": 2078,
+     "timestamp": "34:38"
+    },
+    {
+     "order": 6,
+     "title": "ウタカタララバイ",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=PPQqhPXlEHwfKjIU&t=2337",
+     "timestampSeconds": 2337,
+     "timestamp": "38:57"
+    },
+    {
+     "order": 7,
+     "title": "ここでキスして",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=T8qAVh9D8tSzJLC7&t=2680",
+     "timestampSeconds": 2680,
+     "timestamp": "44:40"
+    },
+    {
+     "order": 8,
+     "title": "丸の内サディスティック",
+     "timingUrl": "https://www.youtube.com/live/3zd5C_6jMQ4?si=9CwEf72JsLvS_DTO&t=2967",
+     "timestampSeconds": 2967,
+     "timestamp": "49:27"
+    }
+   ],
+   "songCount": 8
+  },
+  {
+   "id": "s045",
+   "date": "2022/05/09",
+   "title": "【ショート歌枠】歌＋告知＋お知らせの三本です【ホロライブ / 星街すいせい 】",
+   "url": "https://www.youtube.com/live/njGJGwx_eVM?si=9SuZQwF9x0rOnqXL",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Fallen Angel",
+     "timingUrl": "https://www.youtube.com/live/njGJGwx_eVM?si=VC4ApKbz2KAVCeK1&t=231",
+     "timestampSeconds": 231,
+     "timestamp": "3:51"
+    },
+    {
+     "order": 2,
+     "title": "ヴェノム",
+     "timingUrl": "https://www.youtube.com/live/njGJGwx_eVM?si=Ny92surQ_dbHXfUt&t=659",
+     "timestampSeconds": 659,
+     "timestamp": "10:59"
+    },
+    {
+     "order": 3,
+     "title": "Ready Steady",
+     "timingUrl": "https://www.youtube.com/live/njGJGwx_eVM?si=asuJ217sPR0AGcMK&t=929",
+     "timestampSeconds": 929,
+     "timestamp": "15:29"
+    },
+    {
+     "order": 4,
+     "title": "いかないで",
+     "timingUrl": "https://www.youtube.com/live/njGJGwx_eVM?si=F3C2sxMrDXB8NHXr&t=1199",
+     "timestampSeconds": 1199,
+     "timestamp": "19:59"
+    },
+    {
+     "order": 5,
+     "title": "ミックスナッツ",
+     "timingUrl": "https://www.youtube.com/live/njGJGwx_eVM?si=E4dWq67MyWM_AyPU&t=1531",
+     "timestampSeconds": 1531,
+     "timestamp": "25:31"
+    },
+    {
+     "order": 6,
+     "title": "喜劇",
+     "timingUrl": "https://www.youtube.com/live/njGJGwx_eVM?si=BrRqeMapkKGXkFJ9&t=1938",
+     "timestampSeconds": 1938,
+     "timestamp": "32:18"
+    }
+   ],
+   "songCount": 6
+  },
+  {
+   "id": "s044",
+   "date": "2022/03/22",
+   "title": "【歌枠 / 告知アリ！】誕生日なので歌います🎤【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/nKzl-u3fegU?si=bWdPwOfRF1Gov3ej",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Here comes hope",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=n4E8FENwuFiUJngp&t=168",
+     "timestampSeconds": 168,
+     "timestamp": "2:48"
+    },
+    {
+     "order": 2,
+     "title": "EYE",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=ixSerlhNeIIQb0zv&t=487",
+     "timestampSeconds": 487,
+     "timestamp": "8:07"
+    },
+    {
+     "order": 3,
+     "title": "二人三脚",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=kWe4-kLqMFrdIImZ&t=768",
+     "timestampSeconds": 768,
+     "timestamp": "12:48"
+    },
+    {
+     "order": 4,
+     "title": "六兆年と一夜物語",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=KcKoD3PCJYJgyNJI&t=1147",
+     "timestampSeconds": 1147,
+     "timestamp": "19:07"
+    },
+    {
+     "order": 5,
+     "title": "夜のピエロ",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=IDic6iua-XEEoFpz&t=1458",
+     "timestampSeconds": 1458,
+     "timestamp": "24:18"
+    },
+    {
+     "order": 6,
+     "title": "悪魔の子",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=LWxErq48e9gcvqEa&t=1774",
+     "timestampSeconds": 1774,
+     "timestamp": "29:34"
+    },
+    {
+     "order": 7,
+     "title": "残響散歌",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=-JrxqYYqiJSG_O-3&t=2149",
+     "timestampSeconds": 2149,
+     "timestamp": "35:49"
+    },
+    {
+     "order": 8,
+     "title": "Andromeda",
+     "timingUrl": "https://www.youtube.com/live/nKzl-u3fegU?si=_GY3WSzRKp1uQSVr&t=2433",
+     "timestampSeconds": 2433,
+     "timestamp": "40:33"
+    }
+   ],
+   "songCount": 8
+  },
+  {
+   "id": "s043",
+   "date": "2022/03/08",
+   "title": "歌枠 / SINGING STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/dC6MzWrLee0?si=q5fHyNKEHBtAO78t",
+   "songs": [
+    {
+     "order": 1,
+     "title": "あくたんのこと好きすぎソング",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=7tQQfYNptlxgSr1S&t=181",
+     "timestampSeconds": 181,
+     "timestamp": "3:01"
+    },
+    {
+     "order": 2,
+     "title": "Fake Town Baby",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=3M-qLlRmcVFSW_9k&t=679",
+     "timestampSeconds": 679,
+     "timestamp": "11:19"
+    },
+    {
+     "order": 3,
+     "title": "バビロン",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=81Lw6bflCm5wOEkp&t=1026",
+     "timestampSeconds": 1026,
+     "timestamp": "17:06"
+    },
+    {
+     "order": 4,
+     "title": "夜のピエロ",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=0lzSgdCJbMzwo8wb&t=1301",
+     "timestampSeconds": 1301,
+     "timestamp": "21:41"
+    },
+    {
+     "order": 5,
+     "title": "かつて天才だった俺たちへ",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=62pteFrsyZWTDnzK&t=1578",
+     "timestampSeconds": 1578,
+     "timestamp": "26:18"
+    },
+    {
+     "order": 6,
+     "title": "タイム・リミット",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=t9ZKDk-P-oNlF81c&t=1849",
+     "timestampSeconds": 1849,
+     "timestamp": "30:49"
+    },
+    {
+     "order": 7,
+     "title": "EYE",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=nBWvsB9i8eZ0jjdZ&t=2206",
+     "timestampSeconds": 2206,
+     "timestamp": "36:46"
+    },
+    {
+     "order": 8,
+     "title": "-ERROR",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=KIp4452xIqQLMkFh&t=2580",
+     "timestampSeconds": 2580,
+     "timestamp": "43:00"
+    },
+    {
+     "order": 9,
+     "title": "Mela!",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=x7eT5qYJshQ3T-zO&t=2914",
+     "timestampSeconds": 2914,
+     "timestamp": "48:34"
+    },
+    {
+     "order": 10,
+     "title": "さよならメモリーズ",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=0XK8DwxmNYyFBpgx&t=3383",
+     "timestampSeconds": 3383,
+     "timestamp": "56:23"
+    },
+    {
+     "order": 11,
+     "title": "change",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=-LQohcT76SB96IUw&t=3800",
+     "timestampSeconds": 3800,
+     "timestamp": "1:03:20"
+    },
+    {
+     "order": 12,
+     "title": "あくたんのこと好きすぎソング",
+     "timingUrl": "https://www.youtube.com/live/dC6MzWrLee0?si=USkt4s_pQpAmzCKB&t=4146",
+     "timestampSeconds": 4146,
+     "timestamp": "1:09:06"
+    }
+   ],
+   "songCount": 12
+  },
+  {
+   "id": "s042",
+   "date": "2022/01/21",
+   "title": "【歌枠】はりきって歌います😃 / SINGING STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/ErzOuc_ROPo?si=_uFXGcwdM2Z7wIqO",
+   "songs": [
+    {
+     "order": 1,
+     "title": "ブリキノダンス",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=lGWZOd1Lj9YhdE7Q&t=138",
+     "timestampSeconds": 138,
+     "timestamp": "2:18"
+    },
+    {
+     "order": 2,
+     "title": "ヴィラン",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=OQ9gWVdcb1dHiJQS&t=442",
+     "timestampSeconds": 442,
+     "timestamp": "7:22"
+    },
+    {
+     "order": 3,
+     "title": "独りんぼエンヴィー",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=aXOE0mjoH5QN2axm&t=708",
+     "timestampSeconds": 708,
+     "timestamp": "11:48"
+    },
+    {
+     "order": 4,
+     "title": "死神",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=-2Ty-eTJk8KUvJvk&t=990",
+     "timestampSeconds": 990,
+     "timestamp": "16:30"
+    },
+    {
+     "order": 5,
+     "title": "きらり",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=PmEMvN6FaHtiS09H&t=1317",
+     "timestampSeconds": 1317,
+     "timestamp": "21:57"
+    },
+    {
+     "order": 6,
+     "title": "トンデモワンダーズ",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=3hCUGpRgVVwdtkNR&t=1673",
+     "timestampSeconds": 1673,
+     "timestamp": "27:53"
+    },
+    {
+     "order": 7,
+     "title": "FACT",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=5pDAWonratMDi58G&t=2023",
+     "timestampSeconds": 2023,
+     "timestamp": "33:43"
+    },
+    {
+     "order": 8,
+     "title": "ほめのび",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=aPnSAEvFUjYByRyt&t=2311",
+     "timestampSeconds": 2311,
+     "timestamp": "38:31"
+    },
+    {
+     "order": 9,
+     "title": "My song",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=g3MHAK8_K8Oy1SvT&t=2630",
+     "timestampSeconds": 2630,
+     "timestamp": "43:50"
+    },
+    {
+     "order": 10,
+     "title": "Stellar Stellar",
+     "timingUrl": "https://www.youtube.com/live/ErzOuc_ROPo?si=IDQlI5uDuEPQE7_S&t=3067",
+     "timestampSeconds": 3067,
+     "timestamp": "51:07"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s041",
+   "date": "2021/12/16",
+   "title": "ゲリラショート歌枠 / KARAOKE STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/B4vGvN6VDKc?si=OUcZFCixalFbgQ_m",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Just Be Friends",
+     "timingUrl": "https://www.youtube.com/live/B4vGvN6VDKc?si=bTzkNYmHcrrfE7Hu&t=128",
+     "timestampSeconds": 128,
+     "timestamp": "2:08"
+    },
+    {
+     "order": 2,
+     "title": "バビロン",
+     "timingUrl": "https://www.youtube.com/live/B4vGvN6VDKc?si=zTULSS3MYli8guA_&t=448",
+     "timestampSeconds": 448,
+     "timestamp": "7:28"
+    },
+    {
+     "order": 3,
+     "title": "神っぽいな",
+     "timingUrl": "https://www.youtube.com/live/B4vGvN6VDKc?si=SzknXTXNJJyZlGvE&t=664",
+     "timestampSeconds": 664,
+     "timestamp": "11:04"
+    },
+    {
+     "order": 4,
+     "title": "炉心融解",
+     "timingUrl": "https://www.youtube.com/live/B4vGvN6VDKc?si=WdpFYj_VziMNbX-B&t=905",
+     "timestampSeconds": 905,
+     "timestamp": "15:05"
+    },
+    {
+     "order": 5,
+     "title": "ネトゲ廃人シュプレヒコール",
+     "timingUrl": "https://www.youtube.com/live/B4vGvN6VDKc?si=0JDr0sPIyd-PMmAd&t=1287",
+     "timestampSeconds": 1287,
+     "timestamp": "21:27"
+    },
+    {
+     "order": 6,
+     "title": "阿修羅ちゃん",
+     "timingUrl": "https://www.youtube.com/live/B4vGvN6VDKc?si=uXK1TpeySqArxnzI&t=1647",
+     "timestampSeconds": 1647,
+     "timestamp": "27:27"
+    }
+   ],
+   "songCount": 6
+  },
+  {
+   "id": "s040",
+   "date": "2021/12/06",
+   "title": "【歌枠】明日から三日間休むので歌枠で許されたい / KARAOKE STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/npZYPmjghEI?si=TuSrxEGq-mByA71s",
+   "songs": [
+    {
+     "order": 1,
+     "title": "公然の秘密",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=k206nDOl2QRiaNzx&t=120",
+     "timestampSeconds": 120,
+     "timestamp": "2:00"
+    },
+    {
+     "order": 2,
+     "title": "女の子は誰でも",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=lr8Lzb8OxPydxZkW&t=479",
+     "timestampSeconds": 479,
+     "timestamp": "7:59"
+    },
+    {
+     "order": 3,
+     "title": "阿修羅ちゃん",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=YHukD_hX4KL2iqXu&t=828",
+     "timestampSeconds": 828,
+     "timestamp": "13:48"
+    },
+    {
+     "order": 4,
+     "title": "シンデレラ",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=hfhUj0rYmmLzD-dW&t=1276",
+     "timestampSeconds": 1276,
+     "timestamp": "21:16"
+    },
+    {
+     "order": 5,
+     "title": "ヴァンパイア",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=PkDCzyIihsk7eakB&t=1544",
+     "timestampSeconds": 1544,
+     "timestamp": "25:44"
+    },
+    {
+     "order": 6,
+     "title": "グッバイ宣言",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=6Ql9x-8zUIRbWqei&t=1829",
+     "timestampSeconds": 1829,
+     "timestamp": "30:29"
+    },
+    {
+     "order": 7,
+     "title": "地上の星",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=GTz1MLaCNA3T2OhH&t=2197",
+     "timestampSeconds": 2197,
+     "timestamp": "36:37"
+    },
+    {
+     "order": 8,
+     "title": "ロマンスがありあまる",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=oHj6u8j3cLvyrP0_&t=2568",
+     "timestampSeconds": 2568,
+     "timestamp": "42:48"
+    },
+    {
+     "order": 9,
+     "title": "asphyxia",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=BPI21mDKfARxv35v&t=2819",
+     "timestampSeconds": 2819,
+     "timestamp": "46:59"
+    },
+    {
+     "order": 10,
+     "title": "それは小さな光のような",
+     "timingUrl": "https://www.youtube.com/live/npZYPmjghEI?si=JWKRq4wqalWqFqVV&t=3066",
+     "timestampSeconds": 3066,
+     "timestamp": "51:06"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s039",
+   "date": "2021/11/15",
+   "title": "ショート歌枠 / KARAOKE stream short ver【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/9ZSYdvfwc-U?si=So0JgXr_YjiwtTKV",
+   "songs": [
+    {
+     "order": 1,
+     "title": "ロマンスの途中",
+     "timingUrl": "https://www.youtube.com/live/9ZSYdvfwc-U?si=PCWrM-yWtfv2sdPr&t=145",
+     "timestampSeconds": 145,
+     "timestamp": "2:25"
+    },
+    {
+     "order": 2,
+     "title": "ミュージック・アワー",
+     "timingUrl": "https://www.youtube.com/live/9ZSYdvfwc-U?si=hHTK3_ZzN-UxLVAM&t=588",
+     "timestampSeconds": 588,
+     "timestamp": "9:48"
+    },
+    {
+     "order": 3,
+     "title": "unlasting",
+     "timingUrl": "https://www.youtube.com/live/9ZSYdvfwc-U?si=7Z4UIsYbWFW5WQms&t=1056",
+     "timestampSeconds": 1056,
+     "timestamp": "17:36"
+    },
+    {
+     "order": 4,
+     "title": "優しい彗星",
+     "timingUrl": "https://www.youtube.com/live/9ZSYdvfwc-U?si=bDe5smpUZ4clDIwL&t=1425",
+     "timestampSeconds": 1425,
+     "timestamp": "23:45"
+    },
+    {
+     "order": 5,
+     "title": "いのちの名前",
+     "timingUrl": "https://www.youtube.com/live/9ZSYdvfwc-U?si=BiACRccC6IBbF-x3&t=1725",
+     "timestampSeconds": 1725,
+     "timestamp": "28:45"
+    },
+    {
+     "order": 6,
+     "title": "rain stops, good-bye",
+     "timingUrl": "https://www.youtube.com/live/9ZSYdvfwc-U?si=EvPfp_rfM6Xn4tf7&t=2077",
+     "timestampSeconds": 2077,
+     "timestamp": "34:37"
+    }
+   ],
+   "songCount": 6
+  },
+  {
+   "id": "s038",
+   "date": "2021/09/10",
+   "title": "【歌枠/告知】ソロライブの続報⁉ラストの告知まで歌います / SINGING STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/d95pYGLpgXE?si=8WSuP4nzDrC-dNlp",
+   "songs": [
+    {
+     "order": 1,
+     "title": "リライト",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=SYJesHTQXn3BiImv&t=97",
+     "timestampSeconds": 97,
+     "timestamp": "1:37"
+    },
+    {
+     "order": 2,
+     "title": "アフターダーク",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=gBDFz-FHkdSdc1Eo&t=332",
+     "timestampSeconds": 332,
+     "timestamp": "5:32"
+    },
+    {
+     "order": 3,
+     "title": "ゴールデンタイムラバー",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=v08NQU_ld5J9mLh-&t=732",
+     "timestampSeconds": 732,
+     "timestamp": "12:12"
+    },
+    {
+     "order": 4,
+     "title": "雫",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=vD-FB-UW4W4E3UrV&t=1098",
+     "timestampSeconds": 1098,
+     "timestamp": "18:18"
+    },
+    {
+     "order": 5,
+     "title": "ホログラム",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=NtjpFsLwTxrxr9qq&t=1473",
+     "timestampSeconds": 1473,
+     "timestamp": "24:33"
+    },
+    {
+     "order": 6,
+     "title": "永遠の不在証明",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=z9JbfCzh69RKlw0F&t=1750",
+     "timestampSeconds": 1750,
+     "timestamp": "29:10"
+    },
+    {
+     "order": 7,
+     "title": "春を告げる",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=PrAhvf7oXzJpKdRp&t=2098",
+     "timestampSeconds": 2098,
+     "timestamp": "34:58"
+    },
+    {
+     "order": 8,
+     "title": "馬と鹿",
+     "timingUrl": "https://www.youtube.com/live/d95pYGLpgXE?si=4156sMsfOApIlqYH&t=2383",
+     "timestampSeconds": 2383,
+     "timestamp": "39:43"
+    }
+   ],
+   "songCount": 8
+  },
+  {
+   "id": "s037",
+   "date": "2021/08/29",
+   "title": "【歌枠】急に歌いたくなるんよ / SINGING STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/i7oDE-5Q-5o?si=JDDxzsS6eZAsrSf3",
+   "songs": [
+    {
+     "order": 1,
+     "title": "メイジ・オブ・ヴァイオレット",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=OGYQZlkUvKfhvk5x&t=72",
+     "timestampSeconds": 72,
+     "timestamp": "1:12"
+    },
+    {
+     "order": 2,
+     "title": "Beautiful World",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=YzCcRk-NNoaieD4e&t=420",
+     "timestampSeconds": 420,
+     "timestamp": "7:00"
+    },
+    {
+     "order": 3,
+     "title": "RE:I AM",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=Imv5pKeDKlOmAjJH&t=796",
+     "timestampSeconds": 796,
+     "timestamp": "13:16"
+    },
+    {
+     "order": 4,
+     "title": "感電",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=lXLO9OrL5ka5gzE1&t=1258",
+     "timestampSeconds": 1258,
+     "timestamp": "20:58"
+    },
+    {
+     "order": 5,
+     "title": "廻廻奇譚",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=w8E01YRlrkTLYgkL&t=1684",
+     "timestampSeconds": 1684,
+     "timestamp": "28:04"
+    },
+    {
+     "order": 6,
+     "title": "レディメイド",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=3zf5fS-k_Rua5iGo&t=1935",
+     "timestampSeconds": 1935,
+     "timestamp": "32:15"
+    },
+    {
+     "order": 7,
+     "title": "踊",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=aYeP5dxzRx58KsfQ&t=2207",
+     "timestampSeconds": 2207,
+     "timestamp": "36:47"
+    },
+    {
+     "order": 8,
+     "title": "怪物",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=KC6QNoLGbyIk6ioG&t=2478",
+     "timestampSeconds": 2478,
+     "timestamp": "41:18"
+    },
+    {
+     "order": 9,
+     "title": "ヒッチコック",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=arGMNhsEpKHmJgim&t=2753",
+     "timestampSeconds": 2753,
+     "timestamp": "45:53"
+    },
+    {
+     "order": 10,
+     "title": "言って。",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=Wdj09fVOE5dEdikP&t=2999",
+     "timestampSeconds": 2999,
+     "timestamp": "49:59"
+    },
+    {
+     "order": 11,
+     "title": "Bye Bye Rainy",
+     "timingUrl": "https://www.youtube.com/live/i7oDE-5Q-5o?si=KISQIJ6wUWlkoBLG&t=3361",
+     "timestampSeconds": 3361,
+     "timestamp": "56:01"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s036",
+   "date": "2021/07/29",
+   "title": "【歌枠】しっとりめが多いかも / SINGING STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/FYeBE9WmhMU?si=dDUKdhoYYPrzhofT",
+   "songs": [
+    {
+     "order": 1,
+     "title": "歌よ",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=KGmhZJ1_nEfXIuFd&t=184",
+     "timestampSeconds": 184,
+     "timestamp": "3:04"
+    },
+    {
+     "order": 2,
+     "title": "U",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=0prr2jYr9ia_dXYh&t=435",
+     "timestampSeconds": 435,
+     "timestamp": "7:15"
+    },
+    {
+     "order": 3,
+     "title": "怪盗",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=ssED07Swowj8oRyx&t=755",
+     "timestampSeconds": 755,
+     "timestamp": "12:35"
+    },
+    {
+     "order": 4,
+     "title": "A Perfect Sky",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=sV6wpLmg7_tLJKWR&t=994",
+     "timestampSeconds": 994,
+     "timestamp": "16:34"
+    },
+    {
+     "order": 5,
+     "title": "Pale Blue",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=wx8Sox1QQRTELL5o&t=1290",
+     "timestampSeconds": 1290,
+     "timestamp": "21:30"
+    },
+    {
+     "order": 6,
+     "title": "脳裏上のクラッカー",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=B99HlEQCs8v57att&t=1715",
+     "timestampSeconds": 1715,
+     "timestamp": "28:35"
+    },
+    {
+     "order": 7,
+     "title": "死神",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=_PTRtGFj0END29aC&t=2105",
+     "timestampSeconds": 2105,
+     "timestamp": "35:05"
+    },
+    {
+     "order": 8,
+     "title": "春ひさぎ",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=2bmLaGa7moWOkTg2&t=2315",
+     "timestampSeconds": 2315,
+     "timestamp": "38:35"
+    },
+    {
+     "order": 9,
+     "title": "対象a",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=1IZXCmB1NEQ9Givh&t=2600",
+     "timestampSeconds": 2600,
+     "timestamp": "43:20"
+    },
+    {
+     "order": 10,
+     "title": "カタオモイ",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=J4KvNjxBLGgkoYFj&t=2928",
+     "timestampSeconds": 2928,
+     "timestamp": "48:48"
+    },
+    {
+     "order": 11,
+     "title": "三時十二分",
+     "timingUrl": "https://www.youtube.com/live/FYeBE9WmhMU?si=KvBK4xHY6EeAl0Dt&t=3225",
+     "timestampSeconds": 3225,
+     "timestamp": "53:45"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s035",
+   "date": "2021/07/08",
+   "title": "【重大告知/歌枠】ホロライブ縛りで歌う！！！🎶 / HOLOLIVE SONG SINGING STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/duaPOoTtx0A?si=6N9JK8AqbXv2qOQO",
+   "songs": [
+    {
+     "order": 1,
+     "title": "ID:entity voices",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=VEfKLMPC_RfyoUZ0&t=152",
+     "timestampSeconds": 152,
+     "timestamp": "2:32"
+    },
+    {
+     "order": 2,
+     "title": "Gimme吟味virtuaる最高star!!!!",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=el0EFbxsyGz_onDu&t=572",
+     "timestampSeconds": 572,
+     "timestamp": "9:32"
+    },
+    {
+     "order": 3,
+     "title": "もぐもぐYummy!",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=C62tLtc7CYVzl0rH&t=915",
+     "timestampSeconds": 915,
+     "timestamp": "15:15"
+    },
+    {
+     "order": 4,
+     "title": "至上主義アドトラック",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=sT-a1s6nl2dgbHKw&t=1254",
+     "timestampSeconds": 1254,
+     "timestamp": "20:54"
+    },
+    {
+     "order": 5,
+     "title": "未練レコード",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=BYffGAeWwfyqqwBH&t=1586",
+     "timestampSeconds": 1586,
+     "timestamp": "26:26"
+    },
+    {
+     "order": 6,
+     "title": "シャルイース",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=VxsdxiYHJXKag30_&t=1896",
+     "timestampSeconds": 1896,
+     "timestamp": "31:36"
+    },
+    {
+     "order": 7,
+     "title": "RED",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=caVTW9UI71IocYa9&t=2267",
+     "timestampSeconds": 2267,
+     "timestamp": "37:47"
+    },
+    {
+     "order": 8,
+     "title": "サクラカゼ",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=69OCPCIS2D8GtsqA&t=2501",
+     "timestampSeconds": 2501,
+     "timestamp": "41:41"
+    },
+    {
+     "order": 9,
+     "title": "Palette",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=4arRd4ghXhoemKr3&t=2766",
+     "timestampSeconds": 2766,
+     "timestamp": "46:06"
+    },
+    {
+     "order": 10,
+     "title": "駆けろ",
+     "timingUrl": "https://www.youtube.com/live/duaPOoTtx0A?si=mUJSemPNSAVummFr&t=3040",
+     "timestampSeconds": 3040,
+     "timestamp": "50:40"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s034",
+   "date": "2021/07/01",
+   "title": "【歌枠】singing stream【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/-ryG_yoUFno?si=hkIbWRC8PtkJ9gNS",
+   "songs": [
+    {
+     "order": 1,
+     "title": "GHOST",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=VtnyPIiss5wT1C27&t=135",
+     "timestampSeconds": 135,
+     "timestamp": "2:15"
+    },
+    {
+     "order": 2,
+     "title": "花に亡霊",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=32mPCK-2Wyu_gpzs&t=423",
+     "timestampSeconds": 423,
+     "timestamp": "7:03"
+    },
+    {
+     "order": 3,
+     "title": "Pale Blue",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=X04A-gly_dHsc07d&t=805",
+     "timestampSeconds": 805,
+     "timestamp": "13:25"
+    },
+    {
+     "order": 4,
+     "title": "宿命",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=6oQzPAK_3NO9HxNE&t=1154",
+     "timestampSeconds": 1154,
+     "timestamp": "19:14"
+    },
+    {
+     "order": 5,
+     "title": "アカシア",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=yFkZVf4i-1B9MrdD&t=1447",
+     "timestampSeconds": 1447,
+     "timestamp": "24:07"
+    },
+    {
+     "order": 6,
+     "title": "TAO",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=rPc4O8yX9v-r_0mw&t=1734",
+     "timestampSeconds": 1734,
+     "timestamp": "28:54"
+    },
+    {
+     "order": 7,
+     "title": "Happiness",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=Fppabvz2VYiFRW06&t=2099",
+     "timestampSeconds": 2099,
+     "timestamp": "34:59"
+    },
+    {
+     "order": 8,
+     "title": "特攻 DANCE ~DAWN OF THEBAD~",
+     "timingUrl": "https://www.youtube.com/live/-ryG_yoUFno?si=s1BdH6gOU4hMcn9m&t=2433",
+     "timestampSeconds": 2433,
+     "timestamp": "40:33"
+    }
+   ],
+   "songCount": 8
+  },
+  {
+   "id": "s033",
+   "date": "2021/06/26",
+   "title": "100万人到達まで歌う！！🎤 / Singing to reach 1M subscribers🎤【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/K9IXQreaSf8?si=DSaxJWWQFbcpDjK2",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Bluerose",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=GkngKaF77p6fUMNz&t=535",
+     "timestampSeconds": 535,
+     "timestamp": "8:55"
+    },
+    {
+     "order": 2,
+     "title": "Pale Blue",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=OEfDhLHHy3LMjK6m&t=720",
+     "timestampSeconds": 720,
+     "timestamp": "12:00"
+    },
+    {
+     "order": 3,
+     "title": "怪盗",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=XG390FinnPhdR0Q8&t=1575",
+     "timestampSeconds": 1575,
+     "timestamp": "26:15"
+    },
+    {
+     "order": 4,
+     "title": "優しい彗星",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=VHFVWrCjAuLRKy4a&t=1805",
+     "timestampSeconds": 1805,
+     "timestamp": "30:05"
+    },
+    {
+     "order": 5,
+     "title": "春ひさぎ",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=ZA5XB3ezE8L2P-bB&t=2060",
+     "timestampSeconds": 2060,
+     "timestamp": "34:20"
+    },
+    {
+     "order": 6,
+     "title": "思想犯",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=2zi3zViOGVunzfAH&t=2310",
+     "timestampSeconds": 2310,
+     "timestamp": "38:30"
+    },
+    {
+     "order": 7,
+     "title": "My Dearest",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=Gvsj-OCVOAHrzm03&t=2640",
+     "timestampSeconds": 2640,
+     "timestamp": "44:00"
+    },
+    {
+     "order": 8,
+     "title": "1・2・3",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=Gc4NnUwUnrdV_t6g&t=3010",
+     "timestampSeconds": 3010,
+     "timestamp": "50:10"
+    },
+    {
+     "order": 9,
+     "title": "クリスマスソング",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=p9njVWHz_OvzNz1d&t=3430",
+     "timestampSeconds": 3430,
+     "timestamp": "57:10"
+    },
+    {
+     "order": 10,
+     "title": "変わらないもの",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=rZYErFCmjiK-HEMY&t=3810",
+     "timestampSeconds": 3810,
+     "timestamp": "1:03:30"
+    },
+    {
+     "order": 11,
+     "title": "アイネクライネ",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=OVXHW94nfg5-QHDi&t=4170",
+     "timestampSeconds": 4170,
+     "timestamp": "1:09:30"
+    },
+    {
+     "order": 12,
+     "title": "群青",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=idnsAeD05CUL_Bdt&t=4545",
+     "timestampSeconds": 4545,
+     "timestamp": "1:15:45"
+    },
+    {
+     "order": 13,
+     "title": "NEXT COLOR PLANET",
+     "timingUrl": "https://www.youtube.com/live/K9IXQreaSf8?si=_juCLhZd-muTPyrv&t=5400",
+     "timestampSeconds": 5400,
+     "timestamp": "1:30:00"
+    }
+   ],
+   "songCount": 13
+  },
+  {
+   "id": "s032",
+   "date": "2021/06/25",
+   "title": "【最後に重大告知…!?】3Dのねねすいでカラオケに来てみた！！ / NENE&SUISEI KARAOKE🎤【#ねねすいしんぎんぐ】",
+   "url": "https://www.youtube.com/live/5KxtIkVujI8?si=izqMCcj1pzu9KFbx",
+   "songs": [
+    {
+     "order": 1,
+     "title": "少女S",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=HUmCdHZO9JcEK13C&t=186",
+     "timestampSeconds": 186,
+     "timestamp": "3:06"
+    },
+    {
+     "order": 2,
+     "title": "Rolling star",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=A7w5w2nOhuo2hQgX&t=443",
+     "timestampSeconds": 443,
+     "timestamp": "7:23"
+    },
+    {
+     "order": 3,
+     "title": "Again",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=RLY7jxixvTb3ulh2&t=727",
+     "timestampSeconds": 727,
+     "timestamp": "12:07"
+    },
+    {
+     "order": 4,
+     "title": "Catch the Moment",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=Hfl3aMjpjoO35pXG&t=1094",
+     "timestampSeconds": 1094,
+     "timestamp": "18:14"
+    },
+    {
+     "order": 5,
+     "title": "Lion",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=iG9G9QmL8kRRUwF2&t=1457",
+     "timestampSeconds": 1457,
+     "timestamp": "24:17"
+    },
+    {
+     "order": 6,
+     "title": "いけないボーダーライン",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=EoV_HNOhVje3XhmA&t=1988",
+     "timestampSeconds": 1988,
+     "timestamp": "33:08"
+    },
+    {
+     "order": 7,
+     "title": "キラメキライダー☆",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=Umxjj-_uWLNtbfNl&t=2294",
+     "timestampSeconds": 2294,
+     "timestamp": "38:14"
+    },
+    {
+     "order": 8,
+     "title": "BLUE CLAPPER",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=Z6NePbB7yZvejUzG&t=2621",
+     "timestampSeconds": 2621,
+     "timestamp": "43:41"
+    },
+    {
+     "order": 9,
+     "title": "Bluerose",
+     "timingUrl": "https://www.youtube.com/live/5KxtIkVujI8?si=tKD6oN6oMdcyc_zD&t=2970",
+     "timestampSeconds": 2970,
+     "timestamp": "49:30"
+    }
+   ],
+   "songCount": 9
+  },
+  {
+   "id": "s031",
+   "date": "2021/06/21",
+   "title": "【歌枠】SINGING STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/6XAIPdoELgI?si=ta0wAcZVS7IU8BfS",
+   "songs": [
+    {
+     "order": 1,
+     "title": "春を告げる",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=3m1phgodpNgkU3he&t=197",
+     "timestampSeconds": 197,
+     "timestamp": "3:17"
+    },
+    {
+     "order": 2,
+     "title": "一寸の赤",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=zFKJGX_IFqmMxpSZ&t=401",
+     "timestampSeconds": 401,
+     "timestamp": "6:41"
+    },
+    {
+     "order": 3,
+     "title": "Knights the Phantom Thief",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=2UWcQ5uBHP882LSN&t=735",
+     "timestampSeconds": 735,
+     "timestamp": "12:15"
+    },
+    {
+     "order": 4,
+     "title": "悔やむと書いてミライ",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=g3zx62oFAWWzpHHP&t=1100",
+     "timestampSeconds": 1100,
+     "timestamp": "18:20"
+    },
+    {
+     "order": 5,
+     "title": "Cry Baby",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=k9uw77sjBGXw9q7E&t=1462",
+     "timestampSeconds": 1462,
+     "timestamp": "24:22"
+    },
+    {
+     "order": 6,
+     "title": "Paradisus-Paradoxum",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=Eij2HD-Zm2wUwlch&t=1831",
+     "timestampSeconds": 1831,
+     "timestamp": "30:31"
+    },
+    {
+     "order": 7,
+     "title": "優しい彗星",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=DKn2nHk8PeIgbrNJ&t=2184",
+     "timestampSeconds": 2184,
+     "timestamp": "36:24"
+    },
+    {
+     "order": 8,
+     "title": "Sincerely",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=G2hUxP6BsKfx1v0m&t=2526",
+     "timestampSeconds": 2526,
+     "timestamp": "42:06"
+    },
+    {
+     "order": 9,
+     "title": "Tryst of Stars",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=IX8Ia3g86bl_GDiu&t=2820",
+     "timestampSeconds": 2820,
+     "timestamp": "47:00"
+    },
+    {
+     "order": 10,
+     "title": "グッバイ宣言",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=uBkVt5v7QmF2jb4U&t=3142",
+     "timestampSeconds": 3142,
+     "timestamp": "52:22"
+    },
+    {
+     "order": 11,
+     "title": "1・2・3",
+     "timingUrl": "https://www.youtube.com/live/6XAIPdoELgI?si=SCn0Tu892hgFE5tb&t=3395",
+     "timestampSeconds": 3395,
+     "timestamp": "56:35"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s030",
+   "date": "2021/06/06",
+   "title": "【歌枠】うたいたいきぶんでした【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/KGj0re0whzA?si=klTYn1T0mj5LuHyZ",
+   "songs": [
+    {
+     "order": 1,
+     "title": "グッバイ宣言",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=m_tx_6D_HYdI6rmT&t=116",
+     "timestampSeconds": 116,
+     "timestamp": "1:56"
+    },
+    {
+     "order": 2,
+     "title": "うまぴょい伝説",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=fQZACymlEEvltMAK&t=394",
+     "timestampSeconds": 394,
+     "timestamp": "6:34"
+    },
+    {
+     "order": 3,
+     "title": "オリオンをなぞる",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=DH_pqglB3MlN_rJt&t=532",
+     "timestampSeconds": 532,
+     "timestamp": "8:52"
+    },
+    {
+     "order": 4,
+     "title": "気まぐれロマンチック",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=EBFyDnP3ACaV1eWj&t=866",
+     "timestampSeconds": 866,
+     "timestamp": "14:26"
+    },
+    {
+     "order": 5,
+     "title": "ノーダウト",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=xVjW7mpp3ftZFM02&t=1133",
+     "timestampSeconds": 1133,
+     "timestamp": "18:53"
+    },
+    {
+     "order": 6,
+     "title": "群青",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=UWeQ_pfExbJMoYqd&t=1360",
+     "timestampSeconds": 1360,
+     "timestamp": "22:40"
+    },
+    {
+     "order": 7,
+     "title": "カワキヲアメク",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=bghoRq1eN4a024pK&t=1685",
+     "timestampSeconds": 1685,
+     "timestamp": "28:05"
+    },
+    {
+     "order": 8,
+     "title": "踊",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=WgZsKOMLcZXTDXFI&t=1982",
+     "timestampSeconds": 1982,
+     "timestamp": "33:02"
+    },
+    {
+     "order": 9,
+     "title": "Pretender",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=UrLt14T5Co4zbEAM&t=2234",
+     "timestampSeconds": 2234,
+     "timestamp": "37:14"
+    },
+    {
+     "order": 10,
+     "title": "Cry baby",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=lHSokpHrw2UHQy-x&t=2628",
+     "timestampSeconds": 2628,
+     "timestamp": "43:48"
+    },
+    {
+     "order": 11,
+     "title": "daze",
+     "timingUrl": "https://www.youtube.com/live/KGj0re0whzA?si=fbV1gznHTzg4ROjr&t=3006",
+     "timestampSeconds": 3006,
+     "timestamp": "50:06"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s029",
+   "date": "2021/05/31",
+   "title": "【歌枠】SINGING STREAM / ～明日から6月だぜ～【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/NRs53_seP50?si=wDFMdFBJIJZS2fkd",
+   "songs": [
+    {
+     "order": 1,
+     "title": "罪と罰",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=6Ho_6DUtBaRcSI2T&t=111",
+     "timestampSeconds": 111,
+     "timestamp": "1:51"
+    },
+    {
+     "order": 2,
+     "title": "NIPPON",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=6djOzry5TzzJwvAu&t=517",
+     "timestampSeconds": 517,
+     "timestamp": "8:37"
+    },
+    {
+     "order": 3,
+     "title": "One Last Kiss",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=WE_iobaV6724E85F&t=8200",
+     "timestampSeconds": 8200,
+     "timestamp": "2:16:40"
+    },
+    {
+     "order": 4,
+     "title": "怪物",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=JkNM6pYwE_g533EH&t=1162",
+     "timestampSeconds": 1162,
+     "timestamp": "19:22"
+    },
+    {
+     "order": 5,
+     "title": "春を告げる",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=8cNRPp1X2WK60FFD&t=1525",
+     "timestampSeconds": 1525,
+     "timestamp": "25:25"
+    },
+    {
+     "order": 6,
+     "title": "踊",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=pRgh3eno5PX7r82Z&t=1836",
+     "timestampSeconds": 1836,
+     "timestamp": "30:36"
+    },
+    {
+     "order": 7,
+     "title": "I LOVE YOU",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=av0kCmO983mjOg7u&t=2112",
+     "timestampSeconds": 2112,
+     "timestamp": "35:12"
+    },
+    {
+     "order": 8,
+     "title": "アイネクライネ",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=dfi1F7gEVUpuUGvY&t=2451",
+     "timestampSeconds": 2451,
+     "timestamp": "40:51"
+    },
+    {
+     "order": 9,
+     "title": "Lemon",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=qy2D2vmjTYSAkqHe&t=2763",
+     "timestampSeconds": 2763,
+     "timestamp": "46:03"
+    },
+    {
+     "order": 10,
+     "title": "ERROR",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=oB-qWt5_dvL5lJfO&t=3095",
+     "timestampSeconds": 3095,
+     "timestamp": "51:35"
+    },
+    {
+     "order": 11,
+     "title": "Red",
+     "timingUrl": "https://www.youtube.com/live/NRs53_seP50?si=asnlhOPjjK_aKb8C&t=3414",
+     "timestampSeconds": 3414,
+     "timestamp": "56:54"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s028",
+   "date": "2021/05/12",
+   "title": "【歌枠】SINGING STREAM volumeUPver.【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/7xHFtgfHJcA?si=u8iOA_1N6g5VW8O_",
+   "songs": [
+    {
+     "order": 1,
+     "title": "名前のない怪物",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=6q5ndHjG4hER8iXK&t=152",
+     "timestampSeconds": 152,
+     "timestamp": "2:32"
+    },
+    {
+     "order": 2,
+     "title": "My Dearest",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=22OIcmLLBtySqgUQ&t=596",
+     "timestampSeconds": 596,
+     "timestamp": "9:56"
+    },
+    {
+     "order": 3,
+     "title": "天ノ弱",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=WmQvgZmKY0fQI9rN&t=1041",
+     "timestampSeconds": 1041,
+     "timestamp": "17:21"
+    },
+    {
+     "order": 4,
+     "title": "乙女解剖",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=89ZKi-g5419oDr3R&t=1277",
+     "timestampSeconds": 1277,
+     "timestamp": "21:17"
+    },
+    {
+     "order": 5,
+     "title": "フィクサー",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=Eb0UDy8gfX1tN7sK&t=1547",
+     "timestampSeconds": 1547,
+     "timestamp": "25:47"
+    },
+    {
+     "order": 6,
+     "title": "ノーダウト",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=sGrGO0MYJaNgPgzU&t=1876",
+     "timestampSeconds": 1876,
+     "timestamp": "31:16"
+    },
+    {
+     "order": 7,
+     "title": "一寸の赤",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=PUV3YSFZXPoL4QX4&t=2118",
+     "timestampSeconds": 2118,
+     "timestamp": "35:18"
+    },
+    {
+     "order": 8,
+     "title": "Ham",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=i2ehMq0qDFrULS93&t=2420",
+     "timestampSeconds": 2420,
+     "timestamp": "40:20"
+    },
+    {
+     "order": 9,
+     "title": "ギラギラ",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=-INDHSoYBkZ4_x-8&t=2766",
+     "timestampSeconds": 2766,
+     "timestamp": "46:06"
+    },
+    {
+     "order": 10,
+     "title": "たぶん",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=hABm3BaW6tN9PE8Y&t=3166",
+     "timestampSeconds": 3166,
+     "timestamp": "52:46"
+    },
+    {
+     "order": 11,
+     "title": "廻廻奇譚",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=9BG8v0yxo3M3zq1l&t=3494",
+     "timestampSeconds": 3494,
+     "timestamp": "58:14"
+    },
+    {
+     "order": 12,
+     "title": "おとなの掟",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=K3Lnx6t1vvh-kiOx&t=3762",
+     "timestampSeconds": 3762,
+     "timestamp": "1:02:42"
+    },
+    {
+     "order": 13,
+     "title": "それは小さな光のような",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=VD8GehK2yOZON7u4&t=4055",
+     "timestampSeconds": 4055,
+     "timestamp": "1:07:35"
+    },
+    {
+     "order": 14,
+     "title": "まもりたい ～White Wishes～",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=VolyAF1ehALzmn9f&t=4404",
+     "timestampSeconds": 4404,
+     "timestamp": "1:13:24"
+    },
+    {
+     "order": 15,
+     "title": "冒険彗星",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=OqHh_zjSjpmoX_15&t=4690",
+     "timestampSeconds": 4690,
+     "timestamp": "1:18:10"
+    },
+    {
+     "order": 16,
+     "title": "TAO",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=ky7gpQDfZ0ZmK4Ka&t=5054",
+     "timestampSeconds": 5054,
+     "timestamp": "1:24:14"
+    },
+    {
+     "order": 17,
+     "title": "Good Night",
+     "timingUrl": "https://www.youtube.com/live/7xHFtgfHJcA?si=ECc63Xctk6_v9t42&t=5450",
+     "timestampSeconds": 5450,
+     "timestamp": "1:30:50"
+    }
+   ],
+   "songCount": 17
+  },
+  {
+   "id": "s027",
+   "date": "2021/05/02",
+   "title": "【歌枠】【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/9KJqvx4bPzs?si=K2SnT0d8tSK-9PTA",
+   "songs": [
+    {
+     "order": 1,
+     "title": "能動的三分間",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=2H4isIGV6DMC5QQd&t=186",
+     "timestampSeconds": 186,
+     "timestamp": "3:06"
+    },
+    {
+     "order": 2,
+     "title": "一寸の赤",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=abcAO6alQHEWekzb&t=542",
+     "timestampSeconds": 542,
+     "timestamp": "9:02"
+    },
+    {
+     "order": 3,
+     "title": "お勉強しといてよ",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=9jaluMAhqovYCAdr&t=821",
+     "timestampSeconds": 821,
+     "timestamp": "13:41"
+    },
+    {
+     "order": 4,
+     "title": "秒針を噛む",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=FcQMYfNwCCP9Hx69&t=1105",
+     "timestampSeconds": 1105,
+     "timestamp": "18:25"
+    },
+    {
+     "order": 5,
+     "title": "くらべられっ子",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=TZm2TIG_4a89tXx1&t=1370",
+     "timestampSeconds": 1370,
+     "timestamp": "22:50"
+    },
+    {
+     "order": 6,
+     "title": "ギラギラ",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=sNeKpQd-8MDVEx03&t=1676",
+     "timestampSeconds": 1676,
+     "timestamp": "27:56"
+    },
+    {
+     "order": 7,
+     "title": "雨とカプチーノ",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=cGstNy24sf-gh30k&t=2009",
+     "timestampSeconds": 2009,
+     "timestamp": "33:29"
+    },
+    {
+     "order": 8,
+     "title": "StarRingChild",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=KUCoY4QE38vipUbS&t=2342",
+     "timestampSeconds": 2342,
+     "timestamp": "39:02"
+    },
+    {
+     "order": 9,
+     "title": "LIFE",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=zC-DbECfpq06hfOd&t=2562",
+     "timestampSeconds": 2562,
+     "timestamp": "42:42"
+    },
+    {
+     "order": 10,
+     "title": "プラチナ",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=G6u3bKW-SE-K5xt0&t=2836",
+     "timestampSeconds": 2836,
+     "timestamp": "47:16"
+    },
+    {
+     "order": 11,
+     "title": "One Last Kiss",
+     "timingUrl": "https://www.youtube.com/live/9KJqvx4bPzs?si=m_PDCICaIaMrxDx5&t=3174",
+     "timestampSeconds": 3174,
+     "timestamp": "52:54"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s026",
+   "date": "2021/04/21",
+   "title": "5位記念歌枠 / KARAOKE STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/hOmBHTrIrg8?si=sPyJ_nlaueVQQ94_",
+   "songs": [
+    {
+     "order": 1,
+     "title": "オリオンをなぞる",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=ruBD5OwW7q0WZPEQ&t=121",
+     "timestampSeconds": 121,
+     "timestamp": "2:01"
+    },
+    {
+     "order": 2,
+     "title": "消せない罪",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=uxfQLEPBoXFu-sXd&t=485",
+     "timestampSeconds": 485,
+     "timestamp": "8:05"
+    },
+    {
+     "order": 3,
+     "title": "瞬間センチメンタル",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=w6z4dleM-ZloYfWS&t=742",
+     "timestampSeconds": 742,
+     "timestamp": "12:22"
+    },
+    {
+     "order": 4,
+     "title": "レディメイド",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=hRXyTywrqdRcKcxg&t=1119",
+     "timestampSeconds": 1119,
+     "timestamp": "18:39"
+    },
+    {
+     "order": 5,
+     "title": "怪物",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=0Dyiohduw-gAutRt&t=1478",
+     "timestampSeconds": 1478,
+     "timestamp": "24:38"
+    },
+    {
+     "order": 6,
+     "title": "月のワルツ",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=ks4AheWRPDFBaJMk&t=1885",
+     "timestampSeconds": 1885,
+     "timestamp": "31:25"
+    },
+    {
+     "order": 7,
+     "title": "ヒッチコック",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=zOrjeNp03SK11_e9&t=2233",
+     "timestampSeconds": 2233,
+     "timestamp": "37:13"
+    },
+    {
+     "order": 8,
+     "title": "深い森",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=c4g5HBPSedxV9DM-&t=2541",
+     "timestampSeconds": 2541,
+     "timestamp": "42:21"
+    },
+    {
+     "order": 9,
+     "title": "TAO",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=CaseOhm3QSFSqoL2&t=2858",
+     "timestampSeconds": 2858,
+     "timestamp": "47:38"
+    },
+    {
+     "order": 10,
+     "title": "Red",
+     "timingUrl": "https://www.youtube.com/live/hOmBHTrIrg8?si=hj8_6-ns9LvIP6Hh&t=3248",
+     "timestampSeconds": 3248,
+     "timestamp": "54:08"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s025",
+   "date": "2021/03/29",
+   "title": "【歌枠/KARAOKE】流行りの曲から昔の曲まで！【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/AGJjAAEve40?si=rvKrOWehE6QOiUfC",
+   "songs": [
+    {
+     "order": 1,
+     "title": "桜流し",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=xwIQ_5qVf4rScqb-&t=157",
+     "timestampSeconds": 157,
+     "timestamp": "2:37"
+    },
+    {
+     "order": 2,
+     "title": "Beautiful World",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=w_Sx1CmgtjA_95bY&t=446",
+     "timestampSeconds": 446,
+     "timestamp": "7:26"
+    },
+    {
+     "order": 3,
+     "title": "ギラギラ",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=R8gRcmmxK2mZ7N1W&t=1000",
+     "timestampSeconds": 1000,
+     "timestamp": "16:40"
+    },
+    {
+     "order": 4,
+     "title": "勘ぐれい",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=OT98Ez7ZCLUL6z4B&t=1513",
+     "timestampSeconds": 1513,
+     "timestamp": "25:13"
+    },
+    {
+     "order": 5,
+     "title": "鯨",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=KxoHlbZSmAbXhE_w&t=1963",
+     "timestampSeconds": 1963,
+     "timestamp": "32:43"
+    },
+    {
+     "order": 6,
+     "title": "flying",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=5KPfjcmP97snW7j1&t=2453",
+     "timestampSeconds": 2453,
+     "timestamp": "40:53"
+    },
+    {
+     "order": 7,
+     "title": "ノルニル",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=ZTHraTUvn3QU_eDu&t=2882",
+     "timestampSeconds": 2882,
+     "timestamp": "48:02"
+    },
+    {
+     "order": 8,
+     "title": "吉原ラメント",
+     "timingUrl": "https://www.youtube.com/live/AGJjAAEve40?si=uFuiGdV8kaRdTP3a&t=3376",
+     "timestampSeconds": 3376,
+     "timestamp": "56:16"
+    }
+   ],
+   "songCount": 8
+  },
+  {
+   "id": "s024",
+   "date": "2021/03/17",
+   "title": "【再】80万人記念歌枠🎉KARAOKE STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/v0jFbFyG-Wg?si=dvhdFoScfkf7-eFf",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Theru's song",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=tshIFR3LmAukSI3X&t=263",
+     "timestampSeconds": 263,
+     "timestamp": "4:23"
+    },
+    {
+     "order": 2,
+     "title": "いのちの名前",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=Y_Y1fOBwIOqDg-V7&t=564",
+     "timestampSeconds": 564,
+     "timestamp": "9:24"
+    },
+    {
+     "order": 3,
+     "title": "Arrietty's song",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=1PiD6DCkNGdi6f7p&t=804",
+     "timestampSeconds": 804,
+     "timestamp": "13:24"
+    },
+    {
+     "order": 4,
+     "title": "UNLASTING",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=uGS9U6i9I8fRVy0Q&t=1185",
+     "timestampSeconds": 1185,
+     "timestamp": "19:45"
+    },
+    {
+     "order": 5,
+     "title": "ホログラム",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=YKOLdoJmTn4lFdNr&t=1490",
+     "timestampSeconds": 1490,
+     "timestamp": "24:50"
+    },
+    {
+     "order": 6,
+     "title": "薔薇獄少女",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=3BCpEsCRylXAvEGM&t=1870",
+     "timestampSeconds": 1870,
+     "timestamp": "31:10"
+    },
+    {
+     "order": 7,
+     "title": "LIFE",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=EPGwifERP67qSEP8&t=2197",
+     "timestampSeconds": 2197,
+     "timestamp": "36:37"
+    },
+    {
+     "order": 8,
+     "title": "ほうき星",
+     "timingUrl": "https://www.youtube.com/live/v0jFbFyG-Wg?si=TpBrq4G2ivsakHyU&t=2125",
+     "timestampSeconds": 2125,
+     "timestamp": "35:25"
+    }
+   ],
+   "songCount": 8
+  },
+  {
+   "id": "s023",
+   "date": "2021/03/08",
+   "title": "ショート歌枠🎶KARAOKE STREAM【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/je728pDQGgI?si=gw0u5TzUllpDiyTE",
+   "songs": [
+    {
+     "order": 1,
+     "title": "メリッサ",
+     "timingUrl": "https://www.youtube.com/live/je728pDQGgI?si=knZHI-SX2HRmev8E&t=115",
+     "timestampSeconds": 115,
+     "timestamp": "1:55"
+    },
+    {
+     "order": 2,
+     "title": "消せない罪",
+     "timingUrl": "https://www.youtube.com/live/je728pDQGgI?si=AuSzo8jNLmJgaTnx&t=388",
+     "timestampSeconds": 388,
+     "timestamp": "6:28"
+    },
+    {
+     "order": 3,
+     "title": "扉の向こうへ",
+     "timingUrl": "https://www.youtube.com/live/je728pDQGgI?si=jWZbBG7qK0H2Sivp&t=798",
+     "timestampSeconds": 798,
+     "timestamp": "13:18"
+    },
+    {
+     "order": 4,
+     "title": "Again",
+     "timingUrl": "https://www.youtube.com/live/je728pDQGgI?si=Snj1MlCFWZFvgl2s&t=1209",
+     "timestampSeconds": 1209,
+     "timestamp": "20:09"
+    },
+    {
+     "order": 5,
+     "title": "ゴールデンタイムラバー",
+     "timingUrl": "https://www.youtube.com/live/je728pDQGgI?si=QD5VM-_tR7CtTmjP&t=1610",
+     "timestampSeconds": 1610,
+     "timestamp": "26:50"
+    },
+    {
+     "order": 6,
+     "title": "くらべられっ子",
+     "timingUrl": "https://www.youtube.com/live/je728pDQGgI?si=WFNSjJjmuxN8LYKp&t=2114",
+     "timestampSeconds": 2114,
+     "timestamp": "35:14"
+    }
+   ],
+   "songCount": 6
+  },
+  {
+   "id": "s022",
+   "date": "2021/02/26",
+   "title": "【歌枠】収益化復活祭 / Singing【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/JIZi-vFti0A?si=9oEy2nJoq3pyfCo7",
+   "songs": [
+    {
+     "order": 1,
+     "title": "ロキ",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=9F1A2sB8y_I3F6Tg&t=208",
+     "timestampSeconds": 208,
+     "timestamp": "3:28"
+    },
+    {
+     "order": 2,
+     "title": "うっせえわ",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=T1pk1jX53t3Uk3Pd&t=720",
+     "timestampSeconds": 720,
+     "timestamp": "12:00"
+    },
+    {
+     "order": 3,
+     "title": "Rule",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=wTZ8PwVxJ55NxZMa&t=933",
+     "timestampSeconds": 933,
+     "timestamp": "15:33"
+    },
+    {
+     "order": 4,
+     "title": "Getcha",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=yGHo-Rdrzoy675DK&t=1315",
+     "timestampSeconds": 1315,
+     "timestamp": "21:55"
+    },
+    {
+     "order": 5,
+     "title": "ステップアップ",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=SkUUVHYvpZQqfdLP&t=1601",
+     "timestampSeconds": 1601,
+     "timestamp": "26:41"
+    },
+    {
+     "order": 6,
+     "title": "廻廻奇譚",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=6wmlQUHarHXKVGvn&t=1983",
+     "timestampSeconds": 1983,
+     "timestamp": "33:03"
+    },
+    {
+     "order": 7,
+     "title": "思想犯",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=GVvTuT3pluUfKCE4&t=2237",
+     "timestampSeconds": 2237,
+     "timestamp": "37:17"
+    },
+    {
+     "order": 8,
+     "title": "群青日和",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=uUivXHoYvv_F3zOy&t=2500",
+     "timestampSeconds": 2500,
+     "timestamp": "41:40"
+    },
+    {
+     "order": 9,
+     "title": "In this unstable world",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=WyW8xoNm5h6a5iYc&t=2908",
+     "timestampSeconds": 2908,
+     "timestamp": "48:28"
+    },
+    {
+     "order": 10,
+     "title": "Sugar song and bitter steps",
+     "timingUrl": "https://www.youtube.com/live/JIZi-vFti0A?si=tDUnYUI0rBDJ4Qyp&t=3207",
+     "timestampSeconds": 3207,
+     "timestamp": "53:27"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s021",
+   "date": "2021/02/17",
+   "title": "【歌枠】singing【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/e9kKmZiJ0w4?si=kPNB7gg0HztvCBBE",
+   "songs": [
+    {
+     "order": 1,
+     "title": "天球、彗星は夜を跨いで",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=zJ4PlyLZJdga_C_3&t=178",
+     "timestampSeconds": 178,
+     "timestamp": "2:58"
+    },
+    {
+     "order": 2,
+     "title": "廻廻奇譚",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=Y55UxDepE_ZBwcWQ&t=650",
+     "timestampSeconds": 650,
+     "timestamp": "10:50"
+    },
+    {
+     "order": 3,
+     "title": "かつて天才だった俺たちへ",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=YVGXtIYU9XO_wUaB&t=874",
+     "timestampSeconds": 874,
+     "timestamp": "14:34"
+    },
+    {
+     "order": 4,
+     "title": "恋愛サーキュレーション",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=M_G19OLgqvgEFF22&t=1305",
+     "timestampSeconds": 1305,
+     "timestamp": "21:45"
+    },
+    {
+     "order": 5,
+     "title": "乙女のポリシー",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=qHHmZ-Dv1W-Dfaos&t=1637",
+     "timestampSeconds": 1637,
+     "timestamp": "27:17"
+    },
+    {
+     "order": 6,
+     "title": "君じゃなきゃダメみたい",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=B-N_gLrenRwFoCut&t=1866",
+     "timestampSeconds": 1866,
+     "timestamp": "31:06"
+    },
+    {
+     "order": 7,
+     "title": "Mela!",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=goxi34paI5ZD1sK5&t=2180",
+     "timestampSeconds": 2180,
+     "timestamp": "36:20"
+    },
+    {
+     "order": 8,
+     "title": "STUDY ME",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=qdSHDoddoVmMHoCw&t=2485",
+     "timestampSeconds": 2485,
+     "timestamp": "41:25"
+    },
+    {
+     "order": 9,
+     "title": "Yesterday",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=5WsaNJz6fjCtFikJ&t=2895",
+     "timestampSeconds": 2895,
+     "timestamp": "48:15"
+    },
+    {
+     "order": 10,
+     "title": "daze",
+     "timingUrl": "https://www.youtube.com/live/e9kKmZiJ0w4?si=b4QjhC6xdWMXPNAI&t=3430",
+     "timestampSeconds": 3430,
+     "timestamp": "57:10"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s020",
+   "date": "2021/02/01",
+   "title": "【歌枠】【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/0pb1J47J1VQ?si=4dDUTwjsVTekSG8E",
+   "songs": [
+    {
+     "order": 1,
+     "title": "奈落の花",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=ysR_ESXIWV4SlzrL&t=165",
+     "timestampSeconds": 165,
+     "timestamp": "2:45"
+    },
+    {
+     "order": 2,
+     "title": "うっせぇわ",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=DAo-dEWAbkNkN2PV&t=598",
+     "timestampSeconds": 598,
+     "timestamp": "9:58"
+    },
+    {
+     "order": 3,
+     "title": "勘ぐれい",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=fen6pEbos97QWa-Y&t=922",
+     "timestampSeconds": 922,
+     "timestamp": "15:22"
+    },
+    {
+     "order": 4,
+     "title": "永遠の不在証明",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=0p2c6DT7FgfymKgh&t=1240",
+     "timestampSeconds": 1240,
+     "timestamp": "20:40"
+    },
+    {
+     "order": 5,
+     "title": "シザーハンズ",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=0nf3w1YkczCZ6P-n&t=1512",
+     "timestampSeconds": 1512,
+     "timestamp": "25:12"
+    },
+    {
+     "order": 6,
+     "title": "Make You Happy",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=d0Dg2uIPNy5_EC7U&t=1860",
+     "timestampSeconds": 1860,
+     "timestamp": "31:00"
+    },
+    {
+     "order": 7,
+     "title": "Silhouette",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=X_OG2-QvrfydMt_t&t=2085",
+     "timestampSeconds": 2085,
+     "timestamp": "34:45"
+    },
+    {
+     "order": 8,
+     "title": "I love you",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=6v7kGPT0FZK0yfeu&t=2340",
+     "timestampSeconds": 2340,
+     "timestamp": "39:00"
+    },
+    {
+     "order": 9,
+     "title": "サリシノハラ",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=mlcUndeRxE2ktkCc&t=2710",
+     "timestampSeconds": 2710,
+     "timestamp": "45:10"
+    },
+    {
+     "order": 10,
+     "title": "The Snow White Princess Is",
+     "timingUrl": "https://www.youtube.com/live/0pb1J47J1VQ?si=ddSBISL-XTQPyTes&t=3045",
+     "timestampSeconds": 3045,
+     "timestamp": "50:45"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s019",
+   "date": "2021/01/21",
+   "title": "【3D配信/お知らせアリ】星街すいせいのヒトカラ覗き見!?配信✨第二弾【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/V1jqPRgfZfI?si=pub4hEMEplMdcAw2",
+   "songs": [
+    {
+     "order": 1,
+     "title": "炉心融解",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=0qYtMlCYVhLdHrOY&t=80",
+     "timestampSeconds": 80,
+     "timestamp": "1:20"
+    },
+    {
+     "order": 2,
+     "title": "A perfect sky",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=EsYxSvKX56JkBHTV&t=590",
+     "timestampSeconds": 590,
+     "timestamp": "9:50"
+    },
+    {
+     "order": 3,
+     "title": "Don't say lazy",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=w23ndZceZ2PNHer2&t=950",
+     "timestampSeconds": 950,
+     "timestamp": "15:50"
+    },
+    {
+     "order": 4,
+     "title": "宿命",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=bUEtBC8fvV_-oLRG&t=1300",
+     "timestampSeconds": 1300,
+     "timestamp": "21:40"
+    },
+    {
+     "order": 5,
+     "title": "群青",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=MI57tIVzZLZzEral&t=1683",
+     "timestampSeconds": 1683,
+     "timestamp": "28:03"
+    },
+    {
+     "order": 6,
+     "title": "TRIal Heart 恋の違反チケット",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=mybb8t1oHSD3Wr4h&t=2103",
+     "timestampSeconds": 2103,
+     "timestamp": "35:03"
+    },
+    {
+     "order": 7,
+     "title": "カワキヲアメク",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=kR8Wy2Fw0hL5Fbs-&t=2435",
+     "timestampSeconds": 2435,
+     "timestamp": "40:35"
+    },
+    {
+     "order": 8,
+     "title": "気まぐれロマンティック",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=3LPgdhoQClH-QLD2&t=2708",
+     "timestampSeconds": 2708,
+     "timestamp": "45:08"
+    },
+    {
+     "order": 9,
+     "title": "ないものねだり",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=5S9N9mGjYBJh_jFC&t=2968",
+     "timestampSeconds": 2968,
+     "timestamp": "49:28"
+    },
+    {
+     "order": 10,
+     "title": "Ahoy!!我ら宝鐘海賊団",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=eCSPMtvQu-aFmrFH&t=3420",
+     "timestampSeconds": 3420,
+     "timestamp": "57:00"
+    },
+    {
+     "order": 11,
+     "title": "Blue Clapper",
+     "timingUrl": "https://www.youtube.com/live/V1jqPRgfZfI?si=_epycbMfXPk3L3ZM&t=3743",
+     "timestampSeconds": 3743,
+     "timestamp": "1:02:23"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s018",
+   "date": "2021/01/16",
+   "title": "【70万人耐久歌枠】リベンジかねて！歌います！【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/WLyEZicwOtA?si=8UKlKBYk-uXQmtJB",
+   "songs": [
+    {
+     "order": 1,
+     "title": "恋になりたいaquarium",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=juLF9I56Hnd1KJiL&t=133",
+     "timestampSeconds": 133,
+     "timestamp": "2:13"
+    },
+    {
+     "order": 2,
+     "title": "全力Summer",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=2myUH25OkjF8uPtF&t=505",
+     "timestampSeconds": 505,
+     "timestamp": "8:25"
+    },
+    {
+     "order": 3,
+     "title": "君じゃなきゃダメみたい",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=rj9VDIZOmDqrHibC&t=774",
+     "timestampSeconds": 774,
+     "timestamp": "12:54"
+    },
+    {
+     "order": 4,
+     "title": "Happy Birthday",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=ZfEb_A1rtk4rY8PY&t=1025",
+     "timestampSeconds": 1025,
+     "timestamp": "17:05"
+    },
+    {
+     "order": 5,
+     "title": "メリッサ",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=Q0Gp2au8RDx6SGFw&t=1046",
+     "timestampSeconds": 1046,
+     "timestamp": "17:26"
+    },
+    {
+     "order": 6,
+     "title": "Again",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=FXlmX5uwV0mMMSf2&t=1372",
+     "timestampSeconds": 1372,
+     "timestamp": "22:52"
+    },
+    {
+     "order": 7,
+     "title": "Laugh Maker",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=9BUj67zE5mQ15HkV&t=1699",
+     "timestampSeconds": 1699,
+     "timestamp": "28:19"
+    },
+    {
+     "order": 8,
+     "title": "馬と鹿",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=bnKx0KyRdDL00U1D&t=2019",
+     "timestampSeconds": 2019,
+     "timestamp": "33:39"
+    },
+    {
+     "order": 9,
+     "title": "海の幽霊",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=-LhiEWCwGyVGna5C&t=2311",
+     "timestampSeconds": 2311,
+     "timestamp": "38:31"
+    },
+    {
+     "order": 10,
+     "title": "砂の惑星",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=eJdAkkOt0UuxKfrj&t=2637",
+     "timestampSeconds": 2637,
+     "timestamp": "43:57"
+    },
+    {
+     "order": 11,
+     "title": "夜に駆ける",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=e-bBGKu8UqaB2Wq9&t=2974",
+     "timestampSeconds": 2974,
+     "timestamp": "49:34"
+    },
+    {
+     "order": 12,
+     "title": "秒針を噛む",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=1lGqaiEZcXpDDyTu&t=3234",
+     "timestampSeconds": 3234,
+     "timestamp": "53:54"
+    },
+    {
+     "order": 13,
+     "title": "群青",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=eCejvJau_0YF5gew&t=3499",
+     "timestampSeconds": 3499,
+     "timestamp": "58:19"
+    },
+    {
+     "order": 14,
+     "title": "Pretender",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=qEUCoyJLrC-mhpaQ&t=3878",
+     "timestampSeconds": 3878,
+     "timestamp": "1:04:38"
+    },
+    {
+     "order": 15,
+     "title": "行くぜ怪盗少女",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=WAD3qJZPXrbyZ0-U&t=4571",
+     "timestampSeconds": 4571,
+     "timestamp": "1:16:11"
+    },
+    {
+     "order": 16,
+     "title": "イジワルしないで抱きしめてよ",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=pYJ65pjZZSU5A8ot&t=4818",
+     "timestampSeconds": 4818,
+     "timestamp": "1:20:18"
+    },
+    {
+     "order": 17,
+     "title": "愛を伝えたいだとか",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=8J9lP5dViGH98IIt&t=5133",
+     "timestampSeconds": 5133,
+     "timestamp": "1:25:33"
+    },
+    {
+     "order": 18,
+     "title": "タマシイレボリューション",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=VuKpGHNS-IPdiTBa&t=5408",
+     "timestampSeconds": 5408,
+     "timestamp": "1:30:08"
+    },
+    {
+     "order": 19,
+     "title": "asphyxia",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=brpjMblNN98_HDMp&t=5697",
+     "timestampSeconds": 5697,
+     "timestamp": "1:34:57"
+    },
+    {
+     "order": 20,
+     "title": "unravel",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=8PGATtz1iTLaL0vW&t=5908",
+     "timestampSeconds": 5908,
+     "timestamp": "1:38:28"
+    },
+    {
+     "order": 21,
+     "title": "The Everlasting Guilty Crown",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=VrHjz5gGlAiP_Gci&t=6219",
+     "timestampSeconds": 6219,
+     "timestamp": "1:43:39"
+    },
+    {
+     "order": 22,
+     "title": "気まぐれロマンティック",
+     "timingUrl": "https://www.youtube.com/live/WLyEZicwOtA?si=_gWYTRewrQa_m-Dy&t=6635",
+     "timestampSeconds": 6635,
+     "timestamp": "1:50:35"
+    }
+   ],
+   "songCount": 22
+  },
+  {
+   "id": "s016",
+   "date": "2021/01/09",
+   "title": "【歌枠】新年初！歌います。【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/4Irma4ZOHUQ?si=U3xdJjmXzeJNwQWX",
+   "songs": [
+    {
+     "order": 1,
+     "title": "女々しくて",
+     "timingUrl": "https://www.youtube.com/live/4Irma4ZOHUQ?si=R12U1fWrRFc-P1w_&t=210",
+     "timestampSeconds": 210,
+     "timestamp": "3:30"
+    },
+    {
+     "order": 2,
+     "title": "PLATONIC GIRLS",
+     "timingUrl": "https://www.youtube.com/live/4Irma4ZOHUQ?si=PBakarCNv0HnVjgg&t=557",
+     "timestampSeconds": 557,
+     "timestamp": "9:17"
+    },
+    {
+     "order": 3,
+     "title": "コワレヤスキ",
+     "timingUrl": "https://www.youtube.com/live/4Irma4ZOHUQ?si=vyzFO82FGineaU4Q&t=832",
+     "timestampSeconds": 832,
+     "timestamp": "13:52"
+    },
+    {
+     "order": 4,
+     "title": "New Romantic Sailors",
+     "timingUrl": "https://www.youtube.com/live/4Irma4ZOHUQ?si=xTHEs36GOhjWXBma&t=1164",
+     "timestampSeconds": 1164,
+     "timestamp": "19:24"
+    },
+    {
+     "order": 5,
+     "title": "彗星ハネムーン",
+     "timingUrl": "https://www.youtube.com/live/4Irma4ZOHUQ?si=gPOItU5RXm0c4bpN&t=1583",
+     "timestampSeconds": 1583,
+     "timestamp": "26:23"
+    }
+   ],
+   "songCount": 5
+  },
+  {
+   "id": "s017",
+   "date": "2021/01/09",
+   "title": "【歌枠】新年初！歌います。part2【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/aZrQCuaQKpU?si=rrqSfVskuO_Knl5o",
+   "songs": [
+    {
+     "order": 1,
+     "title": "ダイアモンドクレバス",
+     "timingUrl": "https://www.youtube.com/live/aZrQCuaQKpU?si=VlTyqbazzHRIuUhm&t=62",
+     "timestampSeconds": 62,
+     "timestamp": "1:02"
+    },
+    {
+     "order": 2,
+     "title": "盗作",
+     "timingUrl": "https://www.youtube.com/live/aZrQCuaQKpU?si=t_m7_169KiV2NOr_&t=480",
+     "timestampSeconds": 480,
+     "timestamp": "8:00"
+    },
+    {
+     "order": 3,
+     "title": "Get Over Dress-Code",
+     "timingUrl": "https://www.youtube.com/live/aZrQCuaQKpU?si=JtEa15nVwj8MU5ZK&t=771",
+     "timestampSeconds": 771,
+     "timestamp": "12:51"
+    },
+    {
+     "order": 4,
+     "title": "Blue Clapper",
+     "timingUrl": "https://www.youtube.com/live/aZrQCuaQKpU?si=aWXkWEMOa68V8Xqf&t=1080",
+     "timestampSeconds": 1080,
+     "timestamp": "18:00"
+    }
+   ],
+   "songCount": 4
+  },
+  {
+   "id": "s015",
+   "date": "2020/12/25",
+   "title": "【歌枠リレー】#ホロライブクリスマス 最後まで楽しんでいこうっ🎄【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/_6cdbA4PZYw?si=Qu48_ERasJ_SmUtg",
+   "songs": [
+    {
+     "order": 1,
+     "title": "月のワルツ",
+     "timingUrl": "https://www.youtube.com/live/_6cdbA4PZYw?si=1rAkBm4zXDhOB9T7&t=84",
+     "timestampSeconds": 84,
+     "timestamp": "1:24"
+    },
+    {
+     "order": 2,
+     "title": "No, Thank You",
+     "timingUrl": "https://www.youtube.com/live/_6cdbA4PZYw?si=7RtnNmvBszM6Me3u&t=405",
+     "timestampSeconds": 405,
+     "timestamp": "6:45"
+    },
+    {
+     "order": 3,
+     "title": "Sincerely",
+     "timingUrl": "https://www.youtube.com/live/_6cdbA4PZYw?si=GXg-JoL3hzID2TRH&t=680",
+     "timestampSeconds": 680,
+     "timestamp": "11:20"
+    },
+    {
+     "order": 4,
+     "title": "クリスマスソング",
+     "timingUrl": "https://www.youtube.com/live/_6cdbA4PZYw?si=9aHyGoC2siIzgRUT&t=998",
+     "timestampSeconds": 998,
+     "timestamp": "16:38"
+    },
+    {
+     "order": 5,
+     "title": "Angelic Angel",
+     "timingUrl": "https://www.youtube.com/live/_6cdbA4PZYw?si=zz4Lk7YcvGCkZ0rm&t=1360",
+     "timestampSeconds": 1360,
+     "timestamp": "22:40"
+    }
+   ],
+   "songCount": 5
+  },
+  {
+   "id": "s014",
+   "date": "2020/12/24",
+   "title": "【歌枠耐久!?】クリスマススペシャル！🎄24時までに65万人突破できるか！？【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/KePoUIpZtGI?si=s7blwrFApEDD5OOT",
+   "songs": [
+    {
+     "order": 1,
+     "title": "クリスマスソング",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=aOBHzVMBcmnae27d&t=168",
+     "timestampSeconds": 168,
+     "timestamp": "2:48"
+    },
+    {
+     "order": 2,
+     "title": "I LOVE...",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=-nzlpBHbKaQ_dMgZ&t=511",
+     "timestampSeconds": 511,
+     "timestamp": "8:31"
+    },
+    {
+     "order": 3,
+     "title": "イエスタデイ",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=NLe0oF4aqxAyu_hu&t=796",
+     "timestampSeconds": 796,
+     "timestamp": "13:16"
+    },
+    {
+     "order": 4,
+     "title": "ノーダウト",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=Vk2RWJK8ZgeKB2Hp&t=1235",
+     "timestampSeconds": 1235,
+     "timestamp": "20:35"
+    },
+    {
+     "order": 5,
+     "title": "LOSER",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=aXwn2S3O7LVPQYKa&t=1447",
+     "timestampSeconds": 1447,
+     "timestamp": "24:07"
+    },
+    {
+     "order": 6,
+     "title": "かつて天才だった俺たちへ",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=ZuvYCXaAgfiFWjnt&t=1691",
+     "timestampSeconds": 1691,
+     "timestamp": "28:11"
+    },
+    {
+     "order": 7,
+     "title": "感電",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=ItO2_PKRtKWFw32u&t=1909",
+     "timestampSeconds": 1909,
+     "timestamp": "31:49"
+    },
+    {
+     "order": 8,
+     "title": "馬と鹿",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=F2oURSax4iZmQgKR&t=2360",
+     "timestampSeconds": 2360,
+     "timestamp": "39:20"
+    },
+    {
+     "order": 9,
+     "title": "盗作",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=sZWDA3YmYTuA-m9R&t=2708",
+     "timestampSeconds": 2708,
+     "timestamp": "45:08"
+    },
+    {
+     "order": 10,
+     "title": "だから僕は音楽を辞めた",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=cmACRp2tcLnMocPw&t=2958",
+     "timestampSeconds": 2958,
+     "timestamp": "49:18"
+    },
+    {
+     "order": 11,
+     "title": "群青",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=UCebtdsILMPyKBHq&t=3215",
+     "timestampSeconds": 3215,
+     "timestamp": "53:35"
+    },
+    {
+     "order": 12,
+     "title": "新宝島",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=sNEcY_w-anLLR_Pn&t=3643",
+     "timestampSeconds": 3643,
+     "timestamp": "1:00:43"
+    },
+    {
+     "order": 13,
+     "title": "Rain",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=jGSBnemCX_cqLMPt&t=3986",
+     "timestampSeconds": 3986,
+     "timestamp": "1:06:26"
+    },
+    {
+     "order": 14,
+     "title": "桜流し",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=LPR0FzVSqp0gtKGy&t=4309",
+     "timestampSeconds": 4309,
+     "timestamp": "1:11:49"
+    },
+    {
+     "order": 15,
+     "title": "Beautiful World",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=ZAODqZHDvk6g6OW9&t=4594",
+     "timestampSeconds": 4594,
+     "timestamp": "1:16:34"
+    },
+    {
+     "order": 16,
+     "title": "Can You Keep A Secret?",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=4mjou2Avpl8ODKcj&t=4964",
+     "timestampSeconds": 4964,
+     "timestamp": "1:22:44"
+    },
+    {
+     "order": 17,
+     "title": "Movin'on without you",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=eKdJsKZ5rkeH8zgM&t=5302",
+     "timestampSeconds": 5302,
+     "timestamp": "1:28:22"
+    },
+    {
+     "order": 18,
+     "title": "Kiss & Cry",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=U0EbR2BJvTfa3_T1&t=5627",
+     "timestampSeconds": 5627,
+     "timestamp": "1:33:47"
+    },
+    {
+     "order": 19,
+     "title": "罪と罰",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=Z_r64KzGPN3u-nf_&t=6013",
+     "timestampSeconds": 6013,
+     "timestamp": "1:40:13"
+    },
+    {
+     "order": 20,
+     "title": "本能",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=G_X-3-LIRPaLi5N6&t=6306",
+     "timestampSeconds": 6306,
+     "timestamp": "1:45:06"
+    },
+    {
+     "order": 21,
+     "title": "長く短い祭",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=quqXRTbsrIe0JFlK&t=6587",
+     "timestampSeconds": 6587,
+     "timestamp": "1:49:47"
+    },
+    {
+     "order": 22,
+     "title": "丸の内サディスティック",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=N_V28m3VtHlKkUVn&t=6858",
+     "timestampSeconds": 6858,
+     "timestamp": "1:54:18"
+    },
+    {
+     "order": 23,
+     "title": "射手座☆午後九時Don't be late",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=1L8n7mR23GcaOIlc&t=7489",
+     "timestampSeconds": 7489,
+     "timestamp": "2:04:49"
+    },
+    {
+     "order": 24,
+     "title": "ノーザンクロス",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=iP5IQ42h1MtijS-t&t=7838",
+     "timestampSeconds": 7838,
+     "timestamp": "2:10:38"
+    },
+    {
+     "order": 25,
+     "title": "fake town baby",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=qALEu8DpsOS0yVEQ&t=8198",
+     "timestampSeconds": 8198,
+     "timestamp": "2:16:38"
+    },
+    {
+     "order": 26,
+     "title": "シュガーソングとビターステップ",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=7S2YztnXEkTlu8YX&t=8468",
+     "timestampSeconds": 8468,
+     "timestamp": "2:21:08"
+    },
+    {
+     "order": 27,
+     "title": "冒険彗星",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=37nO8-FloMQoBysd&t=8811",
+     "timestampSeconds": 8811,
+     "timestamp": "2:26:51"
+    },
+    {
+     "order": 28,
+     "title": "unlasting",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=Uf2jo_RvU645gH_K&t=9210",
+     "timestampSeconds": 9210,
+     "timestamp": "2:33:30"
+    },
+    {
+     "order": 29,
+     "title": "炎",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=d6uFrEmKqwBn4bab&t=9511",
+     "timestampSeconds": 9511,
+     "timestamp": "2:38:31"
+    },
+    {
+     "order": 30,
+     "title": "Sincerely",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=gHpaZ4PkAl6unD5L&t=9797",
+     "timestampSeconds": 9797,
+     "timestamp": "2:43:17"
+    },
+    {
+     "order": 31,
+     "title": "UNION",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=DrIHiLKTJycCgSMX&t=10136",
+     "timestampSeconds": 10136,
+     "timestamp": "2:48:56"
+    },
+    {
+     "order": 32,
+     "title": "NO,Thank You!",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=C2wfhOSrkwGk26Zk&t=10371",
+     "timestampSeconds": 10371,
+     "timestamp": "2:52:51"
+    },
+    {
+     "order": 33,
+     "title": "Don't say ″lazy″",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=HkmKG_IFWqT5I5oi&t=10639",
+     "timestampSeconds": 10639,
+     "timestamp": "2:57:19"
+    },
+    {
+     "order": 34,
+     "title": "月のワルツ",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=VeQE9NaZmJkKot6e&t=11026",
+     "timestampSeconds": 11026,
+     "timestamp": "3:03:46"
+    },
+    {
+     "order": 35,
+     "title": "アフターダーク",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=Sz0uIWI5aCq-1acg&t=11365",
+     "timestampSeconds": 11365,
+     "timestamp": "3:09:25"
+    },
+    {
+     "order": 36,
+     "title": "ALONES",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=R8lvDvVlDU2mvtBY&t=11563",
+     "timestampSeconds": 11563,
+     "timestamp": "3:12:43"
+    },
+    {
+     "order": 37,
+     "title": "HANABI",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=kvG_QD2mbo0NWOlb&t=11838",
+     "timestampSeconds": 11838,
+     "timestamp": "3:17:18"
+    },
+    {
+     "order": 38,
+     "title": "Rolling star",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=fHRY3FrhdrlFkNFZ&t=12113",
+     "timestampSeconds": 12113,
+     "timestamp": "3:21:53"
+    },
+    {
+     "order": 39,
+     "title": "chAngE",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=OFCh6GRY4hR_oJG_&t=12312",
+     "timestampSeconds": 12312,
+     "timestamp": "3:25:12"
+    },
+    {
+     "order": 40,
+     "title": "HARUKAZE",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=-jQzYyi56RgUG9xY&t=12567",
+     "timestampSeconds": 12567,
+     "timestamp": "3:29:27"
+    },
+    {
+     "order": 41,
+     "title": "光のロック",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=DP1DlUN27IEQP71J&t=12856",
+     "timestampSeconds": 12856,
+     "timestamp": "3:34:16"
+    },
+    {
+     "order": 42,
+     "title": "青春の瞬き",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=1T0cgLiMi9WLif_j&t=13159",
+     "timestampSeconds": 13159,
+     "timestamp": "3:39:19"
+    },
+    {
+     "order": 43,
+     "title": "Departures 〜あなたにおくるアイの歌〜",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=lIqFsG_LdAvZQmFo&t=13490",
+     "timestampSeconds": 13490,
+     "timestamp": "3:44:50"
+    },
+    {
+     "order": 44,
+     "title": "夢であるように",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=BkKZwACTosz6EWpj&t=13808",
+     "timestampSeconds": 13808,
+     "timestamp": "3:50:08"
+    },
+    {
+     "order": 45,
+     "title": "Good Night",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=NzC3L_fRO24XpqAv&t=14102",
+     "timestampSeconds": 14102,
+     "timestamp": "3:55:02"
+    },
+    {
+     "order": 46,
+     "title": "天球、彗星は夜を跨いで",
+     "timingUrl": "https://www.youtube.com/live/KePoUIpZtGI?si=R0P_Q8NsIjRYFYbG&t=14522",
+     "timestampSeconds": 14522,
+     "timestamp": "4:02:02"
+    }
+   ],
+   "songCount": 46
+  },
+  {
+   "id": "s013",
+   "date": "2020/12/16",
+   "title": "新しいIF！テストがてらショート歌枠！🎶【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/2HQ83TZBq_o?si=6jDBHNFdA1AumK1Q",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Arietty's song",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=r6RgcHFVmAt5iUzi&t=392",
+     "timestampSeconds": 392,
+     "timestamp": "6:32"
+    },
+    {
+     "order": 2,
+     "title": "馬と鹿",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=gnyaaO75XxCzg2xn&t=610",
+     "timestampSeconds": 610,
+     "timestamp": "10:10"
+    },
+    {
+     "order": 3,
+     "title": "イエスタデイ",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=bYDKb9N54AzIRNDT&t=966",
+     "timestampSeconds": 966,
+     "timestamp": "16:06"
+    },
+    {
+     "order": 4,
+     "title": "ANIMA",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=MvodI4DTid8g5MU-&t=1513",
+     "timestampSeconds": 1513,
+     "timestamp": "25:13"
+    },
+    {
+     "order": 5,
+     "title": "ないものねだり",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=vyYqdoOkUMTXxg9n&t=1853",
+     "timestampSeconds": 1853,
+     "timestamp": "30:53"
+    },
+    {
+     "order": 6,
+     "title": "気まぐれロマンティック",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=BEExIXS5ORrAl2gU&t=2188",
+     "timestampSeconds": 2188,
+     "timestamp": "36:28"
+    },
+    {
+     "order": 7,
+     "title": "Karma",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=PdMd5Q90QAoT1Qpu&t=2600",
+     "timestampSeconds": 2600,
+     "timestamp": "43:20"
+    },
+    {
+     "order": 8,
+     "title": "群青",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=n7BIg9QriB_PQHQk&t=2855",
+     "timestampSeconds": 2855,
+     "timestamp": "47:35"
+    },
+    {
+     "order": 9,
+     "title": "シンセリー",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=m1uI-a7UBX_JlnA5&t=3210",
+     "timestampSeconds": 3210,
+     "timestamp": "53:30"
+    },
+    {
+     "order": 10,
+     "title": "まもりたい White Wishes",
+     "timingUrl": "https://www.youtube.com/live/2HQ83TZBq_o?si=GcGQuq1Qb3y44prK&t=3667",
+     "timestampSeconds": 3667,
+     "timestamp": "1:01:07"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s012",
+   "date": "2020/11/26",
+   "title": "ゲリラ歌枠🎶singing【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/ErYf0CK2DkU?si=xIPBSROgXRnaXWPI",
+   "songs": [
+    {
+     "order": 1,
+     "title": "夜もすがら君想ふ",
+     "timingUrl": "https://www.youtube.com/live/ErYf0CK2DkU?si=0ErYOZeRgeK4pEsE&t=126",
+     "timestampSeconds": 126,
+     "timestamp": "2:06"
+    },
+    {
+     "order": 2,
+     "title": "からくりピエロ",
+     "timingUrl": "https://www.youtube.com/live/ErYf0CK2DkU?si=gAc1sBXa7AxUWMGf&t=418",
+     "timestampSeconds": 418,
+     "timestamp": "6:58"
+    },
+    {
+     "order": 3,
+     "title": "Just Be Friends",
+     "timingUrl": "https://www.youtube.com/live/ErYf0CK2DkU?si=eDCF5yUSWy0zp8Lh&t=839",
+     "timestampSeconds": 839,
+     "timestamp": "13:59"
+    },
+    {
+     "order": 4,
+     "title": "夕立のりぼん",
+     "timingUrl": "https://www.youtube.com/live/ErYf0CK2DkU?si=U1Z7PkO15rNz7mw-&t=1200",
+     "timestampSeconds": 1200,
+     "timestamp": "20:00"
+    },
+    {
+     "order": 5,
+     "title": "小夜子",
+     "timingUrl": "https://www.youtube.com/live/ErYf0CK2DkU?si=XaZFGOtlMo532CZz&t=1487",
+     "timestampSeconds": 1487,
+     "timestamp": "24:47"
+    },
+    {
+     "order": 6,
+     "title": "少女レイ",
+     "timingUrl": "https://www.youtube.com/live/ErYf0CK2DkU?si=H9B-COZuwdXGeayl&t=1926",
+     "timestampSeconds": 1926,
+     "timestamp": "32:06"
+    },
+    {
+     "order": 7,
+     "title": "まとい",
+     "timingUrl": "https://www.youtube.com/live/ErYf0CK2DkU?si=XtKccYhiZwXYyf7y&t=2199",
+     "timestampSeconds": 2199,
+     "timestamp": "36:39"
+    }
+   ],
+   "songCount": 7
+  },
+  {
+   "id": "s011",
+   "date": "2020/11/23",
+   "title": "【雑談＋歌】近況やら話しながら時々歌う【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/r7EkHcKM_vE?si=eRasuJ0ZUx8eSe7W",
+   "songs": [
+    {
+     "order": 1,
+     "title": "罪と罰",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=zxIQWnywC0mIkF__&t=127",
+     "timestampSeconds": 127,
+     "timestamp": "2:07"
+    },
+    {
+     "order": 2,
+     "title": "神様、仏様",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=QxtUXlXPT8JaQxoJ&t=1793",
+     "timestampSeconds": 1793,
+     "timestamp": "29:53"
+    },
+    {
+     "order": 3,
+     "title": "炎",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=UhkajpYiSXpGgXik&t=2499",
+     "timestampSeconds": 2499,
+     "timestamp": "41:39"
+    },
+    {
+     "order": 4,
+     "title": "感電",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=p52C8nZwlLOo_1n5&t=3000",
+     "timestampSeconds": 3000,
+     "timestamp": "50:00"
+    },
+    {
+     "order": 5,
+     "title": "KING",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=zQpM8epd7qBv14Xq&t=3353",
+     "timestampSeconds": 3353,
+     "timestamp": "55:53"
+    },
+    {
+     "order": 6,
+     "title": "いけないボーダーライン",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=AwSyshXuSXwUEPXE&t=3620",
+     "timestampSeconds": 3620,
+     "timestamp": "1:00:20"
+    },
+    {
+     "order": 7,
+     "title": "ワルキューレがとまらない",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=ImdpgCKKpmBPOtg-&t=3937",
+     "timestampSeconds": 3937,
+     "timestamp": "1:05:37"
+    },
+    {
+     "order": 8,
+     "title": "獣ゆく細道",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=ZZkQ--YthQzyCjSk&t=4114",
+     "timestampSeconds": 4114,
+     "timestamp": "1:08:34"
+    },
+    {
+     "order": 9,
+     "title": "火炎",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=fGIqQY3ydraSMxto&t=4445",
+     "timestampSeconds": 4445,
+     "timestamp": "1:14:05"
+    },
+    {
+     "order": 10,
+     "title": "Ham",
+     "timingUrl": "https://www.youtube.com/live/r7EkHcKM_vE?si=furfJkh74r9UacpO&t=4765",
+     "timestampSeconds": 4765,
+     "timestamp": "1:19:25"
+    }
+   ],
+   "songCount": 10
+  },
+  {
+   "id": "s010",
+   "date": "2020/11/04",
+   "title": "ショート歌枠🎶【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/CN-tuLGf5K0?si=d8VQ1aFeODkB7y88",
+   "songs": [
+    {
+     "order": 1,
+     "title": "HAM",
+     "timingUrl": "https://www.youtube.com/live/CN-tuLGf5K0?si=LhOq8_7j7JwUT9aQ&t=140",
+     "timestampSeconds": 140,
+     "timestamp": "2:20"
+    },
+    {
+     "order": 2,
+     "title": "春ひさぎ",
+     "timingUrl": "https://www.youtube.com/live/CN-tuLGf5K0?si=8eIQuHSwVV7WGNz4&t=477",
+     "timestampSeconds": 477,
+     "timestamp": "7:57"
+    },
+    {
+     "order": 3,
+     "title": "白日",
+     "timingUrl": "https://www.youtube.com/live/CN-tuLGf5K0?si=ZfYuj22VWfDgBgAS&t=714",
+     "timestampSeconds": 714,
+     "timestamp": "11:54"
+    },
+    {
+     "order": 4,
+     "title": "rain stops, good-bye",
+     "timingUrl": "https://www.youtube.com/live/CN-tuLGf5K0?si=3qya-q2jzxx8YUSO&t=1093",
+     "timestampSeconds": 1093,
+     "timestamp": "18:13"
+    },
+    {
+     "order": 5,
+     "title": "深昏睡",
+     "timingUrl": "https://www.youtube.com/live/CN-tuLGf5K0?si=DIbcdQrTAkj9oiHw&t=1430",
+     "timestampSeconds": 1430,
+     "timestamp": "23:50"
+    },
+    {
+     "order": 6,
+     "title": "Good night",
+     "timingUrl": "https://www.youtube.com/live/CN-tuLGf5K0?si=JFzPShKgKJ-w1bj7&t=1633",
+     "timestampSeconds": 1633,
+     "timestamp": "27:13"
+    }
+   ],
+   "songCount": 6
+  },
+  {
+   "id": "s009",
+   "date": "2020/09/27",
+   "title": "【歌枠⚠重大告知!?】50万人突破するまで歌い続ける【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/RPdUErEiRbk?si=1iIDKlZ7YGMUQLfc",
+   "songs": [
+    {
+     "order": 1,
+     "title": "Make you happy",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=zz9XJbxqdn7uolxp&t=146",
+     "timestampSeconds": 146,
+     "timestamp": "2:26"
+    },
+    {
+     "order": 2,
+     "title": "Mela!",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=pB2kFq-U8tlRupEU&t=341",
+     "timestampSeconds": 341,
+     "timestamp": "5:41"
+    },
+    {
+     "order": 3,
+     "title": "UNION",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=K6zbXlGYuQtan7MD&t=588",
+     "timestampSeconds": 588,
+     "timestamp": "9:48"
+    },
+    {
+     "order": 4,
+     "title": "たぶん",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=OZdrZcM_et2FrpQr&t=951",
+     "timestampSeconds": 951,
+     "timestamp": "15:51"
+    },
+    {
+     "order": 5,
+     "title": "飛行艇",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=hznGeMv3MIBIczKJ&t=1244",
+     "timestampSeconds": 1244,
+     "timestamp": "20:44"
+    },
+    {
+     "order": 6,
+     "title": "本能",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=Fq6nqtZXWRLhl_8e&t=1509",
+     "timestampSeconds": 1509,
+     "timestamp": "25:09"
+    },
+    {
+     "order": 7,
+     "title": "言って。",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=JHg_M6DQ0-48ChLi&t=1909",
+     "timestampSeconds": 1909,
+     "timestamp": "31:49"
+    },
+    {
+     "order": 8,
+     "title": "The Everlasting Guilty Crown",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=1Vdh1oobVDVMyqez&t=2159",
+     "timestampSeconds": 2159,
+     "timestamp": "35:59"
+    },
+    {
+     "order": 9,
+     "title": "My Dearest",
+     "timingUrl": "https://www.youtube.com/live/RPdUErEiRbk?si=3ZRMZXn293ncyXCB&t=2818",
+     "timestampSeconds": 2818,
+     "timestamp": "46:58"
+    }
+   ],
+   "songCount": 9
+  },
+  {
+   "id": "s008",
+   "date": "2020/08/24",
+   "title": "歌枠🎶【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/B7Z5HyUibYY?si=1KgEwfwf3QAcbMMB",
+   "songs": [
+    {
+     "order": 1,
+     "title": "ロキ",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=0wGgnOYeKba74q1b&t=162",
+     "timestampSeconds": 162,
+     "timestamp": "2:42"
+    },
+    {
+     "order": 2,
+     "title": "カワキヲアメク",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=43WkZWuRPJ-B6Upb&t=494",
+     "timestampSeconds": 494,
+     "timestamp": "8:14"
+    },
+    {
+     "order": 3,
+     "title": "鏡面の波",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=zqeXntV7kZDiUPzD&t=827",
+     "timestampSeconds": 827,
+     "timestamp": "13:47"
+    },
+    {
+     "order": 4,
+     "title": "Here",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=8Nb04-n0BCiRGZ6R&t=928",
+     "timestampSeconds": 928,
+     "timestamp": "15:28"
+    },
+    {
+     "order": 5,
+     "title": "花の唄",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=kMZQvvdNY62nzeVn&t=1037",
+     "timestampSeconds": 1037,
+     "timestamp": "17:17"
+    },
+    {
+     "order": 6,
+     "title": "unravel",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=y1XlrI24XtkbYh6h&t=1456",
+     "timestampSeconds": 1456,
+     "timestamp": "24:16"
+    },
+    {
+     "order": 7,
+     "title": "asphyxia",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=crMsFWS0klecLu0U&t=1723",
+     "timestampSeconds": 1723,
+     "timestamp": "28:43"
+    },
+    {
+     "order": 8,
+     "title": "UNSTOPPABLE",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=0f7MQfYHmNsCXC21&t=2104",
+     "timestampSeconds": 2104,
+     "timestamp": "35:04"
+    },
+    {
+     "order": 9,
+     "title": "乱舞のメロディ",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=3GaMXUmpGIRsxtdK&t=2466",
+     "timestampSeconds": 2466,
+     "timestamp": "41:06"
+    },
+    {
+     "order": 10,
+     "title": "アフターダーク",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=iMhxvj3t1fRs7t1L&t=2698",
+     "timestampSeconds": 2698,
+     "timestamp": "44:58"
+    },
+    {
+     "order": 11,
+     "title": "HARUKAZE",
+     "timingUrl": "https://www.youtube.com/live/B7Z5HyUibYY?si=JlGYGAoSXSMxLYDv&t=2893",
+     "timestampSeconds": 2893,
+     "timestamp": "48:13"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s007",
+   "date": "2020/08/04",
+   "title": "ゲリラ！！！40万人突破するまで歌うのを止めるな！！！！🎶【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/-cWxSCiPKk4?si=SY6byeWje88xcsX0",
+   "songs": [
+    {
+     "order": 1,
+     "title": "海の幽霊",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=C1BWFE0cy-8Zq8l8&t=170",
+     "timestampSeconds": 170,
+     "timestamp": "2:50"
+    },
+    {
+     "order": 2,
+     "title": "カワキヲアメク",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=W97lXbfAamDhF9rq&t=506",
+     "timestampSeconds": 506,
+     "timestamp": "8:26"
+    },
+    {
+     "order": 3,
+     "title": "Rolling Star",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=JHNSPNWTzit22M94&t=766",
+     "timestampSeconds": 766,
+     "timestamp": "12:46"
+    },
+    {
+     "order": 4,
+     "title": "Fake town baby",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=XwQsu14FIkbKJ8ng&t=957",
+     "timestampSeconds": 957,
+     "timestamp": "15:57"
+    },
+    {
+     "order": 5,
+     "title": "カルマ",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=dd7IvVxDINjf4eiW&t=1225",
+     "timestampSeconds": 1225,
+     "timestamp": "20:25"
+    },
+    {
+     "order": 6,
+     "title": "めざせポケモンマスター",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=5aSKJQTH8y_cZLvV&t=1470",
+     "timestampSeconds": 1470,
+     "timestamp": "24:30"
+    },
+    {
+     "order": 7,
+     "title": "愛を伝えたいだとか",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=NYF39brUya0aSO9S&t=1777",
+     "timestampSeconds": 1777,
+     "timestamp": "29:37"
+    },
+    {
+     "order": 8,
+     "title": "光",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=N9NVV8Xm9AyN-lYr&t=2018",
+     "timestampSeconds": 2018,
+     "timestamp": "33:38"
+    },
+    {
+     "order": 9,
+     "title": "長く短い祭",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=GE0uH1J9QM5W-hEC&t=2333",
+     "timestampSeconds": 2333,
+     "timestamp": "38:53"
+    },
+    {
+     "order": 10,
+     "title": "公然の秘密",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=oWFy9FFobasiijoi&t=2595",
+     "timestampSeconds": 2595,
+     "timestamp": "43:15"
+    },
+    {
+     "order": 11,
+     "title": "宿命",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=GoHB10T69p2wA8RS&t=2811",
+     "timestampSeconds": 2811,
+     "timestamp": "46:51"
+    },
+    {
+     "order": 12,
+     "title": "ノーダウト",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=9MojkE_SoLudoZGt&t=3095",
+     "timestampSeconds": 3095,
+     "timestamp": "51:35"
+    },
+    {
+     "order": 13,
+     "title": "ないものねだり",
+     "timingUrl": "https://www.youtube.com/live/-cWxSCiPKk4?si=FlHJClcR9S3KE4t9&t=3301",
+     "timestampSeconds": 3301,
+     "timestamp": "55:01"
+    }
+   ],
+   "songCount": 13
+  },
+  {
+   "id": "s005",
+   "date": "2020/07/08",
+   "title": "【歌枠】アカペラでたくさんうたう～！♪【ホロライブ/星街すいせい】",
+   "url": "https://www.youtube.com/live/clXusKnSBY0?si=1ncFPwyezaqfO_UF",
+   "songs": [
+    {
+     "order": 1,
+     "title": "A DECLARATION OF xxx",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=N5Bz6oJX7LQxxRuA&t=403",
+     "timestampSeconds": 403,
+     "timestamp": "6:43"
+    },
+    {
+     "order": 2,
+     "title": "Tryst of Stars",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=6jiWQ1z22Tz3fowp&t=636",
+     "timestampSeconds": 636,
+     "timestamp": "10:36"
+    },
+    {
+     "order": 3,
+     "title": "トウキョウト・ロック・シティ",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=cjnGuE5ByJtJXgzC&t=858",
+     "timestampSeconds": 858,
+     "timestamp": "14:18"
+    },
+    {
+     "order": 4,
+     "title": "アディショナルメモリー",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=kmbpbClW6SIGgRdE&t=1061",
+     "timestampSeconds": 1061,
+     "timestamp": "17:41"
+    },
+    {
+     "order": 5,
+     "title": "夕映えプレセント",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=RC6KlzYKPDP5_xtc&t=1188",
+     "timestampSeconds": 1188,
+     "timestamp": "19:48"
+    },
+    {
+     "order": 6,
+     "title": "ハーモニクス",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=SHubD9wMhuHIBiog&t=1391",
+     "timestampSeconds": 1391,
+     "timestamp": "23:11"
+    },
+    {
+     "order": 7,
+     "title": "純・アモーレ・愛",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=1mEKPxfLjiTYe2BZ&t=1540",
+     "timestampSeconds": 1540,
+     "timestamp": "25:40"
+    },
+    {
+     "order": 8,
+     "title": "aLIEz",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=m4MFSPG9sniX9KI4&t=1710",
+     "timestampSeconds": 1710,
+     "timestamp": "28:30"
+    },
+    {
+     "order": 9,
+     "title": "花の唄",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=J96jV-Zw3zIC2coM&t=1861",
+     "timestampSeconds": 1861,
+     "timestamp": "31:01"
+    },
+    {
+     "order": 10,
+     "title": "鏡面の波",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=AI3fbB-vuPtoUiKh&t=2048",
+     "timestampSeconds": 2048,
+     "timestamp": "34:08"
+    },
+    {
+     "order": 11,
+     "title": "FairyTaleじゃいられない",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=oKnGvQu_DgLCS0gi&t=2181",
+     "timestampSeconds": 2181,
+     "timestamp": "36:21"
+    },
+    {
+     "order": 12,
+     "title": "アスター",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=bCK56Ilg-KfnsNwg&t=2388",
+     "timestampSeconds": 2388,
+     "timestamp": "39:48"
+    },
+    {
+     "order": 13,
+     "title": "対象a",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=uvr0O0v3x7-JogxF&t=2532",
+     "timestampSeconds": 2532,
+     "timestamp": "42:12"
+    },
+    {
+     "order": 14,
+     "title": "コンプレックス・イマージュ",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=jc7pOJSMXal3RuhK&t=2688",
+     "timestampSeconds": 2688,
+     "timestamp": "44:48"
+    },
+    {
+     "order": 15,
+     "title": "吉原ラメント",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=iw_B6wA5ageB2Ip2&t=2808",
+     "timestampSeconds": 2808,
+     "timestamp": "46:48"
+    },
+    {
+     "order": 16,
+     "title": "grilletto",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=GKmfg23WBswB4IQa&t=2846",
+     "timestampSeconds": 2846,
+     "timestamp": "47:26"
+    },
+    {
+     "order": 17,
+     "title": "ダイヤモンドプリンセスのゆううつ",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=JkYizLzO1QyoszoJ&t=3103",
+     "timestampSeconds": 3103,
+     "timestamp": "51:43"
+    },
+    {
+     "order": 18,
+     "title": "ウミユリ海底譚",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=7e1Rqd4Wm2JCJ6Jb&t=3237",
+     "timestampSeconds": 3237,
+     "timestamp": "53:57"
+    },
+    {
+     "order": 19,
+     "title": "HEAVEN’S RAVE",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=r2sVigDwDywYWPE3&t=3315",
+     "timestampSeconds": 3315,
+     "timestamp": "55:15"
+    },
+    {
+     "order": 20,
+     "title": "Beat in Angel",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=Uv2J3mc_NSkvCxCF&t=3396",
+     "timestampSeconds": 3396,
+     "timestamp": "56:36"
+    },
+    {
+     "order": 21,
+     "title": "Believe again",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=3T4gU5NclN9KAmmX&t=3561",
+     "timestampSeconds": 3561,
+     "timestamp": "59:21"
+    },
+    {
+     "order": 22,
+     "title": "About me",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=_mkN8oWFF7eYe3M3&t=3697",
+     "timestampSeconds": 3697,
+     "timestamp": "1:01:37"
+    },
+    {
+     "order": 23,
+     "title": "world’s end, girl’s rondo",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=CiOT2-cwL71-022l&t=3965",
+     "timestampSeconds": 3965,
+     "timestamp": "1:06:05"
+    },
+    {
+     "order": 24,
+     "title": "gate of the abyss",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=qL1lcp5kLKlM-INR&t=4104",
+     "timestampSeconds": 4104,
+     "timestamp": "1:08:24"
+    },
+    {
+     "order": 25,
+     "title": "Fallen",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=DwxPrH1Er0KUPrLf&t=2181",
+     "timestampSeconds": 2181,
+     "timestamp": "36:21"
+    },
+    {
+     "order": 26,
+     "title": "千の夜をこえて",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=wjBzPTMNUCvBmeCN&t=4383",
+     "timestampSeconds": 4383,
+     "timestamp": "1:13:03"
+    },
+    {
+     "order": 27,
+     "title": "EXPOSE’Burn out!!!",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=osBuQxSU182e5jQq&t=4472",
+     "timestampSeconds": 4472,
+     "timestamp": "1:14:32"
+    },
+    {
+     "order": 28,
+     "title": "色彩",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=R_YGFcEQLKMaiooI&t=4630",
+     "timestampSeconds": 4630,
+     "timestamp": "1:17:10"
+    },
+    {
+     "order": 29,
+     "title": "アツクナレ",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=fyQ-zQckvS7la8Pk&t=4762",
+     "timestampSeconds": 4762,
+     "timestamp": "1:19:22"
+    },
+    {
+     "order": 30,
+     "title": "Dance in the Apocalypse",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=y-gWfmKdF3RLL1GO&t=4885",
+     "timestampSeconds": 4885,
+     "timestamp": "1:21:25"
+    },
+    {
+     "order": 31,
+     "title": "君の銀の庭",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=iunau8MUxfpyz5s5&t=5190",
+     "timestampSeconds": 5190,
+     "timestamp": "1:26:30"
+    },
+    {
+     "order": 32,
+     "title": "OK!",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=_bHxn5qyoC2FbkjW&t=5311",
+     "timestampSeconds": 5311,
+     "timestamp": "1:28:31"
+    },
+    {
+     "order": 33,
+     "title": "Follow the Nightingale",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=U5KAVLSk3OnygwKE&t=5440",
+     "timestampSeconds": 5440,
+     "timestamp": "1:30:40"
+    },
+    {
+     "order": 34,
+     "title": "New Day, New Life",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=v7gMYVhWnMPeo8Lf&t=5529",
+     "timestampSeconds": 5529,
+     "timestamp": "1:32:09"
+    },
+    {
+     "order": 35,
+     "title": "OTAHENアンセム",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=ZnsHx8uZiYiXLneX&t=5617",
+     "timestampSeconds": 5617,
+     "timestamp": "1:33:37"
+    },
+    {
+     "order": 36,
+     "title": "Stay Alive",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=1XG5mRvSdYKdbzSa&t=5738",
+     "timestampSeconds": 5738,
+     "timestamp": "1:35:38"
+    },
+    {
+     "order": 37,
+     "title": "インフィニティ",
+     "timingUrl": "https://www.youtube.com/live/clXusKnSBY0?si=BkXHh0yVin00Qd9W&t=6045",
+     "timestampSeconds": 6045,
+     "timestamp": "1:40:45"
+    }
+   ],
+   "songCount": 37
+  },
+  {
+   "id": "s004",
+   "date": "2020/06/29",
+   "title": "ショート歌枠♪【ホロライブ/星街すいせい】",
+   "url": "https://www.youtube.com/live/N4Op5gpV2AU?si=wsPfuUY0s9foq1U5",
+   "songs": [
+    {
+     "order": 1,
+     "title": "思想犯",
+     "timingUrl": "https://www.youtube.com/live/N4Op5gpV2AU?si=ETY0mAdNzQAYzh0y&t=129",
+     "timestampSeconds": 129,
+     "timestamp": "2:09"
+    },
+    {
+     "order": 2,
+     "title": "春ひさぎ",
+     "timingUrl": "https://www.youtube.com/live/N4Op5gpV2AU?si=L9tDLYBue2eW9MeZ&t=574",
+     "timestampSeconds": 574,
+     "timestamp": "9:34"
+    },
+    {
+     "order": 3,
+     "title": "雨とカプチーノ",
+     "timingUrl": "https://www.youtube.com/live/N4Op5gpV2AU?si=9WdR1ONy9K21ZvEv&t=803",
+     "timestampSeconds": 803,
+     "timestamp": "13:23"
+    },
+    {
+     "order": 4,
+     "title": "秒針を噛む",
+     "timingUrl": "https://www.youtube.com/live/N4Op5gpV2AU?si=YS_jyk7P6LEn6CMd&t=1155",
+     "timestampSeconds": 1155,
+     "timestamp": "19:15"
+    },
+    {
+     "order": 5,
+     "title": "乱舞のメロディ",
+     "timingUrl": "https://www.youtube.com/live/N4Op5gpV2AU?si=kz8ab0YuHvup2OA6&t=1438",
+     "timestampSeconds": 1438,
+     "timestamp": "23:58"
+    },
+    {
+     "order": 6,
+     "title": "餞の鳥",
+     "timingUrl": "https://www.youtube.com/live/N4Op5gpV2AU?si=pHOWd7Daa_6htEyO&t=1749",
+     "timestampSeconds": 1749,
+     "timestamp": "29:09"
+    }
+   ],
+   "songCount": 6
+  },
+  {
+   "id": "s006",
+   "date": "2020/06/18",
+   "title": "【歌枠】【ホロライブ / 星街すいせい】",
+   "url": "https://www.youtube.com/live/cGyPdVUaPdI?si=mmaTOVbMniQNEYK1",
+   "songs": [
+    {
+     "order": 1,
+     "title": "飛行艇",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=OceU8DV-gYP9uXpW&t=147",
+     "timestampSeconds": 147,
+     "timestamp": "2:27"
+    },
+    {
+     "order": 2,
+     "title": "紅蓮華",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=3T5sRfopXOrbtg-M&t=421",
+     "timestampSeconds": 421,
+     "timestamp": "7:01"
+    },
+    {
+     "order": 3,
+     "title": "名前のない怪物",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=3MRy3N8DAjfR9sfE&t=800",
+     "timestampSeconds": 800,
+     "timestamp": "13:20"
+    },
+    {
+     "order": 4,
+     "title": "狂乱Hey Kids!!",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=yzUE_2Oqof8v2EUU&t=1135",
+     "timestampSeconds": 1135,
+     "timestamp": "18:55"
+    },
+    {
+     "order": 5,
+     "title": "Paradisus-Paradoxum",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=0V3kOYRRinCZXXdM&t=1439",
+     "timestampSeconds": 1439,
+     "timestamp": "23:59"
+    },
+    {
+     "order": 6,
+     "title": "Asphyxia",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=CIpm9UEsWCou6FW7&t=1685",
+     "timestampSeconds": 1685,
+     "timestamp": "28:05"
+    },
+    {
+     "order": 7,
+     "title": "命に嫌われている",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=ye8-yUcJsE_pvyGw&t=1873",
+     "timestampSeconds": 1873,
+     "timestamp": "31:13"
+    },
+    {
+     "order": 8,
+     "title": "Ringo time!!!!",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=--jT823Qw8iF5sfm&t=2210",
+     "timestampSeconds": 2210,
+     "timestamp": "36:50"
+    },
+    {
+     "order": 9,
+     "title": "灰色の水曜日",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=_YMbZEh0fg4GKJed&t=2326",
+     "timestampSeconds": 2326,
+     "timestamp": "38:46"
+    },
+    {
+     "order": 10,
+     "title": "思想犯",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=Rwmr6gF8J2tfYyZL&t=2593",
+     "timestampSeconds": 2593,
+     "timestamp": "43:13"
+    },
+    {
+     "order": 11,
+     "title": "Mela!",
+     "timingUrl": "https://www.youtube.com/live/cGyPdVUaPdI?si=Cu1lRAF9e2ptMoll&t=2848",
+     "timestampSeconds": 2848,
+     "timestamp": "47:28"
+    }
+   ],
+   "songCount": 11
+  },
+  {
+   "id": "s003",
+   "date": "2020/06/15",
+   "title": "【3D配信！】星街すいせいのヒトカラ覗き見！？配信！【星街すいせい/ホロライブ】",
+   "url": "https://www.youtube.com/live/H1D_xTnXvSE?si=EP6VrCr7hNJWHZUv",
+   "songs": [
+    {
+     "order": 1,
+     "title": "怪盗少女",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=TurObkctXKRfIszz&t=283",
+     "timestampSeconds": 283,
+     "timestamp": "4:43"
+    },
+    {
+     "order": 2,
+     "title": "アイスクリーム シンドローム",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=LsuIBq0ojPkG6XaL&t=587",
+     "timestampSeconds": 587,
+     "timestamp": "9:47"
+    },
+    {
+     "order": 3,
+     "title": "めざせポケモンマスター",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=AiIzeZKCwCiwnYtN&t=983",
+     "timestampSeconds": 983,
+     "timestamp": "16:23"
+    },
+    {
+     "order": 4,
+     "title": "メリッサ",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=5VRLBIBvAW95P3S2&t=1333",
+     "timestampSeconds": 1333,
+     "timestamp": "22:13"
+    },
+    {
+     "order": 5,
+     "title": "シャルル",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=gpHsqLJ9yDzT-plr&t=1699",
+     "timestampSeconds": 1699,
+     "timestamp": "28:19"
+    },
+    {
+     "order": 6,
+     "title": "花に亡霊",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=YshY55RrUog0Ad6F&t=2006",
+     "timestampSeconds": 2006,
+     "timestamp": "33:26"
+    },
+    {
+     "order": 7,
+     "title": "ノーザンクロス",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=vi5JK5LgpXq3wJVN&t=2339",
+     "timestampSeconds": 2339,
+     "timestamp": "38:59"
+    },
+    {
+     "order": 8,
+     "title": "ユニオン",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=gdhAAhuSBI_h7JBp&t=2742",
+     "timestampSeconds": 2742,
+     "timestamp": "45:42"
+    },
+    {
+     "order": 9,
+     "title": "シュガーソングとビターステップ",
+     "timingUrl": "https://www.youtube.com/live/H1D_xTnXvSE?si=OVbc57zTVGBqDbee&t=3030",
+     "timestampSeconds": 3030,
+     "timestamp": "50:30"
+    }
+   ],
+   "songCount": 9
+  },
+  {
+   "id": "s002",
+   "date": "2020/06/09",
+   "title": "【歌枠】椎名林檎縛りで歌う！",
+   "url": "https://www.youtube.com/live/OsocHv-2IJc?si=bPVGHi3-38IYhOFi",
+   "songs": [
+    {
+     "order": 1,
+     "title": "郡青日和",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=KS00icYvPkZI5Ch9&t=129",
+     "timestampSeconds": 129,
+     "timestamp": "2:09"
+    },
+    {
+     "order": 2,
+     "title": "罪と罰",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=XJASCJtn69QMKycy&t=448",
+     "timestampSeconds": 448,
+     "timestamp": "7:28"
+    },
+    {
+     "order": 3,
+     "title": "NIPPON",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=nxJ8UN83pV8WseSX&t=802",
+     "timestampSeconds": 802,
+     "timestamp": "13:22"
+    },
+    {
+     "order": 4,
+     "title": "永遠の不在証明",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=QKZz7gdMrddGmsPT&t=1094",
+     "timestampSeconds": 1094,
+     "timestamp": "18:14"
+    },
+    {
+     "order": 5,
+     "title": "おとなの掟",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=VrKyzD2q3e9Xh5eh&t=1440",
+     "timestampSeconds": 1440,
+     "timestamp": "24:00"
+    },
+    {
+     "order": 6,
+     "title": "女の子は誰でも",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=G20KpWkdw9RXH4sQ&t=1709",
+     "timestampSeconds": 1709,
+     "timestamp": "28:29"
+    },
+    {
+     "order": 7,
+     "title": "能動的三分間",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=SY8DDh2qA7kcYRGp&t=1978",
+     "timestampSeconds": 1978,
+     "timestamp": "32:58"
+    },
+    {
+     "order": 8,
+     "title": "きらきら武士",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=O6y7iKefKV2cyapm&t=2233",
+     "timestampSeconds": 2233,
+     "timestamp": "37:13"
+    },
+    {
+     "order": 9,
+     "title": "本能",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=Rd0G4MFyxv7h0Vd5&t=2536",
+     "timestampSeconds": 2536,
+     "timestamp": "42:16"
+    },
+    {
+     "order": 10,
+     "title": "神様、仏様",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=oZQRtYk9nfSI5ctO&t=2815",
+     "timestampSeconds": 2815,
+     "timestamp": "46:55"
+    },
+    {
+     "order": 11,
+     "title": "青春の瞬き",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=BEQXCxXsLnp5YNt7&t=3054",
+     "timestampSeconds": 3054,
+     "timestamp": "50:54"
+    },
+    {
+     "order": 12,
+     "title": "丸の内サディスティック",
+     "timingUrl": "https://www.youtube.com/live/OsocHv-2IJc?si=VDpN7UNb23gfvFYW&t=3386",
+     "timestampSeconds": 3386,
+     "timestamp": "56:26"
+    }
+   ],
+   "songCount": 12
+  },
+  {
+   "id": "s001",
+   "date": "2020/06/07",
+   "title": "ひたすらアカペラする歌枠！",
+   "url": "https://www.youtube.com/live/n0ieG2D_qaU?si=jIJdIGYKDowofr8f",
+   "songs": [
+    {
+     "order": 1,
+     "title": "夜明けと蛍",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=FjIvmY7JIz8E2XMG&t=379",
+     "timestampSeconds": 379,
+     "timestamp": "6:19"
+    },
+    {
+     "order": 2,
+     "title": "文学少年の憂鬱",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=ehYMDBgFTclJe3gW&t=659",
+     "timestampSeconds": 659,
+     "timestamp": "10:59"
+    },
+    {
+     "order": 3,
+     "title": "ノルニル",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=uH1WTMQdIcYFkIMS&t=832",
+     "timestampSeconds": 832,
+     "timestamp": "13:52"
+    },
+    {
+     "order": 4,
+     "title": "こいかぜ",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=P5j61Ohk8yr3Cu73&t=1007",
+     "timestampSeconds": 1007,
+     "timestamp": "16:47"
+    },
+    {
+     "order": 5,
+     "title": "雨とカプチーノ",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=YKh9yzzoGLhr_YpF&t=1190",
+     "timestampSeconds": 1190,
+     "timestamp": "19:50"
+    },
+    {
+     "order": 6,
+     "title": "dreaming bird",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=ma0Lt-W4gCvCoAMY&t=1356",
+     "timestampSeconds": 1356,
+     "timestamp": "22:36"
+    },
+    {
+     "order": 7,
+     "title": "SEVENDAYS LOVE, SEVENDAYS FRIEND",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=S8ntoSlR6QmOYtwC&t=1496",
+     "timestampSeconds": 1496,
+     "timestamp": "24:56"
+    },
+    {
+     "order": 8,
+     "title": "バラライカ",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=lxMKfbKcRGI5_IGw&t=1659",
+     "timestampSeconds": 1659,
+     "timestamp": "27:39"
+    },
+    {
+     "order": 9,
+     "title": "一番の宝物",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=2XOfdPI-1vapbfHT&t=1687",
+     "timestampSeconds": 1687,
+     "timestamp": "28:07"
+    },
+    {
+     "order": 10,
+     "title": "命に嫌われている",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=vDBNtqyd-3U_6xeg&t=1743",
+     "timestampSeconds": 1743,
+     "timestamp": "29:03"
+    },
+    {
+     "order": 11,
+     "title": "とっとこハム太郎",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=_9mQV_-5ylhW7vam&t=1848",
+     "timestampSeconds": 1848,
+     "timestamp": "30:48"
+    },
+    {
+     "order": 12,
+     "title": "テルの歌",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=x7GHXB85HhF1P4XE&t=1895",
+     "timestampSeconds": 1895,
+     "timestamp": "31:35"
+    },
+    {
+     "order": 13,
+     "title": "THE GENESIS - Eden",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=7d5xHR5LhvUQ7K7e&t=2062",
+     "timestampSeconds": 2062,
+     "timestamp": "34:22"
+    },
+    {
+     "order": 14,
+     "title": "ラブノベルス",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=jJLSRJK7c4OoM9_7&t=2172",
+     "timestampSeconds": 2172,
+     "timestamp": "36:12"
+    },
+    {
+     "order": 15,
+     "title": "乱舞のメロディ",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=1aQk-WnaBJJH_2B1&t=2293",
+     "timestampSeconds": 2293,
+     "timestamp": "38:13"
+    },
+    {
+     "order": 16,
+     "title": "チェンジ!!!!!",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=ogHF4cRmpBGJg1q8&t=2474",
+     "timestampSeconds": 2474,
+     "timestamp": "41:14"
+    },
+    {
+     "order": 17,
+     "title": "夜空はなんでも知ってるの",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=jOYaZChmUSlUikVq&t=2636",
+     "timestampSeconds": 2636,
+     "timestamp": "43:56"
+    },
+    {
+     "order": 18,
+     "title": "餞の鳥",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=I4h6KwI8PzdFFQBZ&t=2800",
+     "timestampSeconds": 2800,
+     "timestamp": "46:40"
+    },
+    {
+     "order": 19,
+     "title": "今宵月の館にて",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=DGQpa_XvHWDs2RK-&t=2982",
+     "timestampSeconds": 2982,
+     "timestamp": "49:42"
+    },
+    {
+     "order": 20,
+     "title": "夜咄ディセイブ",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=Z87uISLf1wx-Pf8P&t=3225",
+     "timestampSeconds": 3225,
+     "timestamp": "53:45"
+    },
+    {
+     "order": 21,
+     "title": "青空のラプソディ",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=PBxVCLg83GPKJs_M&t=3358",
+     "timestampSeconds": 3358,
+     "timestamp": "55:58"
+    },
+    {
+     "order": 22,
+     "title": "Fire◎Flower",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=BsEoSQLwE97pjUUd&t=3477",
+     "timestampSeconds": 3477,
+     "timestamp": "57:57"
+    },
+    {
+     "order": 23,
+     "title": "未熟DREAMER",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=w0x-lJKOqF7NiIMu&t=3658",
+     "timestampSeconds": 3658,
+     "timestamp": "1:00:58"
+    },
+    {
+     "order": 24,
+     "title": "恐山ル・ヴォワール",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=B6daBjwsE1kaQaVS&t=4036",
+     "timestampSeconds": 4036,
+     "timestamp": "1:07:16"
+    },
+    {
+     "order": 25,
+     "title": "ルーマー",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=yPF3HYwkX4N89Q5G&t=4192",
+     "timestampSeconds": 4192,
+     "timestamp": "1:09:52"
+    },
+    {
+     "order": 26,
+     "title": "月光",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=xIgmfc6F2PbmyRLt&t=4325",
+     "timestampSeconds": 4325,
+     "timestamp": "1:12:05"
+    },
+    {
+     "order": 27,
+     "title": "Heavenly Blue",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=LTHnynUhn_BO5P8T&t=4403",
+     "timestampSeconds": 4403,
+     "timestamp": "1:13:23"
+    },
+    {
+     "order": 28,
+     "title": "火炎",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=63OKp3ggKtTomz-r&t=4533",
+     "timestampSeconds": 4533,
+     "timestamp": "1:15:33"
+    },
+    {
+     "order": 29,
+     "title": "フィクサー",
+     "timingUrl": "https://www.youtube.com/live/n0ieG2D_qaU?si=9g74n4-lGpfQhLFw&t=4653",
+     "timestampSeconds": 4653,
+     "timestamp": "1:17:33"
+    }
+   ],
+   "songCount": 29
+  }
+ ],
+ "stats": {
+  "streams": 54,
+  "songs": 590,
+  "uniqueSongs": 412
+ }
+}
+</script>
+<script>
+"use strict";
+// ===== データ読み込み =====
+// 出典: Googleスプレッドシート『星街すいせい歌枠』 → JSON出力 → 下の #site-data ブロック（assets/data.json と同一内容）
+// JSON構造: { site, streamer, source, generatedAt, stats:{streams,songs,uniqueSongs},
+//   streams:[ { id, date, title, url, songCount, songs:[ { order, title, timingUrl, timestampSeconds, timestamp } ] } ] }
+// 更新手順: シートを更新 → JSONを再出力 → #site-data の中身と assets/data.json を差し替えるだけで再構築できます。
+const RAW = JSON.parse(document.getElementById("site-data").textContent);
+const SITE = { site: RAW.site, streamer: RAW.streamer, source: RAW.source, generatedAt: RAW.generatedAt, stats: RAW.stats || {} };
+const STREAMS = (RAW.streams || []).map(function(st){ return { id: st.id, date: String(st.date).replace(/\//g, "-"), title: st.title, url: st.url, count: (st.songCount != null ? st.songCount : (st.songs || []).length) }; });
+const SONGS = [];
+(RAW.streams || []).forEach(function(st){ (st.songs || []).forEach(function(so){ SONGS.push({ sid: st.id, order: String(so.order).padStart(2, "0"), title: String(so.title).trim(), url: so.timingUrl, sec: so.timestampSeconds, ts: so.timestamp }); }); });
+const DATA = { streams: STREAMS, songs: SONGS };
+const streamById = {}; STREAMS.forEach(s=>streamById[s.id]=s);
+const ARTIST = {"群青":"YOASOBI","ノーダウト":"Official髭男dism","雨とカプチーノ":"ヨルシカ","罪と罰":"椎名林檎","丸の内サディスティック":"椎名林檎","思想犯":"ヨルシカ","春ひさぎ":"ヨルシカ","Mela!":"緑黄色社会","カワキヲアメク":"美波","馬と鹿":"米津玄師","廻廻奇譚":"Eve"};
+function fmtDate(d){ const [y,m,dd]=d.split("-"); return y+"年"+Number(m)+"月"+Number(dd)+"日"; }
+function tsec(url){ const m=/[?&]t=(\d+)/.exec(url||""); return m?Number(m[1]):null; }
+function fmtTime(sec){ if(sec==null) return ""; const h=Math.floor(sec/3600), m=Math.floor(sec%3600/60), s=sec%60; const mm=h>0?String(m).padStart(2,"0"):String(m); const ss=String(s).padStart(2,"0"); return (h>0?h+":":"")+mm+":"+ss; }
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+// ヒーロー統計・生成日・最新ピックアップはJSONから表示（シート→JSON更新で自動反映）
+(function(){
+  const dates = STREAMS.map(s=>s.date).slice().sort();
+  const set = (id, v)=>{ const el=document.getElementById(id); if(el && v!=null && v!=="") el.textContent=v; };
+  set("statStreams", SITE.stats.streams!=null ? SITE.stats.streams : STREAMS.length);
+  set("statSongs", SITE.stats.songs!=null ? SITE.stats.songs : SONGS.length);
+  set("statUnique", SITE.stats.uniqueSongs);
+  if(dates.length) set("statPeriod", dates[0].replace(/-/g,".")+" – "+dates[dates.length-1].replace(/-/g,"."));
+  set("genDate", SITE.generatedAt);
+  const latest = STREAMS.slice().sort((a,b)=>b.date.localeCompare(a.date))[0];
+  if(latest){
+    const img=document.getElementById("latestImg"); if(img){ img.src="assets/thumbs/"+latest.id+".jpg"; img.alt="最新の歌枠「"+latest.title+"」のYouTubeサムネイル"; }
+    set("latestTitle", latest.title);
+    set("latestDate", "📅 "+fmtDate(latest.date));
+    set("latestCount", "♪ 全"+latest.count+"曲");
+    const link=document.getElementById("latestLink"); if(link) link.href=latest.url;
+    const openBtn=document.getElementById("latestOpen"); if(openBtn){ openBtn.setAttribute("data-open-stream", latest.id); openBtn.textContent="セットリストを見る（"+latest.count+"曲）"; }
+  }
+})();
+// stars
+(function(){ const box=document.getElementById("stars"); let h=""; for(let i=0;i<70;i++){ const sz=(Math.random()*2+1).toFixed(1); h+='<i style="left:'+(Math.random()*100)+'%;top:'+(Math.random()*100)+'%;width:'+sz+'px;height:'+sz+'px;animation-delay:'+(Math.random()*3)+'s"></i>'; } box.innerHTML=h; })();
+// counts
+const countByTitle={}; SONGS.forEach(s=>{countByTitle[s.title]=(countByTitle[s.title]||0)+1;});
+const ranked=Object.entries(countByTitle).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"ja"));
+// TOP list: 1位,2位, 3位同率(4回)全曲
+const topEl=document.getElementById("topList");
+(function(){
+  const items=[];
+  ranked.forEach(([t,c])=>{ if(c>=4) items.push([t,c]); });
+  let html="";
+  items.forEach(([t,c],i)=>{
+    const rank = c===6?1:(c===5?2:3);
+    const rc = rank===1?"r1":(rank===2?"r2":"r3");
+    const label = rank===3 && i>1 ? "3位同率" : rank+"位";
+    html+='<li data-song="'+esc(t)+'" role="button" tabindex="0" aria-label="'+esc(t)+'が歌われた配信を表示"><span class="rank '+rc+'">'+rank+'</span><span><span class="t">'+esc(t)+'</span><br><span class="a">'+esc(ARTIST[t]||"")+(ARTIST[t]?" ・ ":"")+label+'</span></span><span class="c">'+c+'回</span></li>';
+  });
+  topEl.innerHTML=html;
+  topEl.querySelectorAll("li").forEach(li=>{
+    const go=()=>{ setSearch(li.getAttribute("data-song"), true); };
+    li.addEventListener("click",go);
+    li.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); }});
+  });
+})();
+// chips
+const chipTitles=["群青","ノーダウト","Mela!","廻廻奇譚","雨とカプチーノ","丸の内サディスティック","カワキヲアメク","馬と鹿"];
+document.getElementById("chips").innerHTML = chipTitles.map(t=>'<button type="button" data-q="'+esc(t)+'">'+esc(t)+'（'+countByTitle[t]+'回）</button>').join("");
+document.getElementById("chips").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>setSearch(b.getAttribute("data-q"), true)));
+// search rendering
+const resultsEl=document.getElementById("results"), resTitle=document.getElementById("resTitle"), resCount=document.getElementById("resCount"), moreBtn=document.getElementById("moreBtn");
+let currentHits=[], shown=30;
+function hitHTML(s){
+  const st=streamById[s.sid]; const sec=tsec(s.url);
+  return '<a class="song-hit" href="'+esc(s.url)+'" target="_blank" rel="noopener" aria-label="'+esc(s.title)+' をYouTubeで聴く"><span class="no">'+esc(s.sid.toUpperCase())+'<br>'+esc(s.order)+'曲目</span><span class="main"><span class="title">'+esc(s.title)+'</span><br><span class="from">'+esc(st?st.title:"")+' ・ '+ (st?fmtDate(st.date):"") +'</span>'+(sec!=null?'<br><span class="time">▶ '+fmtTime(sec)+' から</span>':'')+'</span><span class="play"><span class="tri">▶</span>聴く</span></a>';
+}
+function renderHits(){
+  if(!currentHits.length){ resultsEl.innerHTML='<div class="empty">見つかりませんでした。曲名の表記を少し変えて試してみてください（例：ひらがな／カタカナ、英語タイトル）。</div>'; moreBtn.hidden=true; return; }
+  resultsEl.innerHTML=currentHits.slice(0,shown).map(hitHTML).join("");
+  moreBtn.hidden = currentHits.length<=shown;
+  moreBtn.textContent="もっと見る（残り "+(currentHits.length-shown)+" 件）";
+}
+moreBtn.addEventListener("click",()=>{ shown+=40; renderHits(); });
+function showDefault(){
+  resTitle.textContent="よく歌われている曲（歌唱回数順）";
+  // default: one representative list = all occurrences of top songs? Instead show ranked distinct songs as hits of latest occurrence + count note.
+  // Simpler & useful: show all occurrences sorted by count desc then date desc, capped rendering.
+  const sorted=[...SONGS].sort((a,b)=> (countByTitle[b.title]-countByTitle[a.title]) || (streamById[b.sid].date.localeCompare(streamById[a.sid].date)) );
+  currentHits=sorted; shown=20;
+  resCount.textContent="延べ "+SONGS.length+" 曲から表示中";
+  resTitle.textContent="よく歌われている曲から表示";
+  renderHits();
+}
+function doSearch(q){
+  q=(q||"").trim();
+  if(!q){ showDefault(); return; }
+  const nq=q.toLowerCase();
+  currentHits=SONGS.filter(s=>s.title.toLowerCase().includes(nq)).sort((a,b)=> streamById[b.sid].date.localeCompare(streamById[a.sid].date) || a.order.localeCompare(b.order));
+  shown=30;
+  resTitle.textContent="「"+q+"」の検索結果";
+  resCount.textContent=currentHits.length+" 件ヒット（"+new Set(currentHits.map(h=>h.title)).size+" 曲）";
+  renderHits();
+}
+function setSearch(q, scroll){
+  const input=document.getElementById("q"); input.value=q; doSearch(q);
+  if(scroll) document.getElementById("search").scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("searchForm").addEventListener("submit",e=>{ e.preventDefault(); doSearch(document.getElementById("q").value); });
+let deb=null;
+document.getElementById("q").addEventListener("input",e=>{ clearTimeout(deb); deb=setTimeout(()=>doSearch(e.target.value),180); });
+showDefault();
+// streams
+const streamList=document.getElementById("streamList"), moreStreams=document.getElementById("moreStreams");
+const years=["すべて",...Array.from(new Set(STREAMS.map(s=>s.date.slice(0,4)))).sort().reverse()];
+let curYear="すべて", streamShown=12;
+const filtersEl=document.getElementById("yearFilters");
+filtersEl.innerHTML=years.map(y=>'<button type="button" data-year="'+y+'" aria-pressed="'+(y==="すべて")+'">'+(y==="すべて"?"すべて":y+"年")+'</button>').join("");
+filtersEl.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{
+  curYear=b.getAttribute("data-year"); streamShown=12;
+  filtersEl.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b ? "true":"false"));
+  renderStreams();
+}));
+const songsByStream={}; SONGS.forEach(s=>{ (songsByStream[s.sid]=songsByStream[s.sid]||[]).push(s); });
+Object.values(songsByStream).forEach(a=>a.sort((x,y)=>x.order.localeCompare(y.order)));
+function streamHTML(st){
+  const list=(songsByStream[st.id]||[]).map(s=>{
+    const sec=tsec(s.url);
+    return '<li><a href="'+esc(s.url)+'" target="_blank" rel="noopener"><span class="ord">'+esc(s.order)+'</span><span class="name">'+esc(s.title)+'</span>'+(sec!=null?'<span class="time">'+fmtTime(sec)+'</span>':'')+'<span class="go">▶ 聴く</span></a></li>';
+  }).join("");
+  return '<article class="stream" id="stream-'+st.id+'"><div class="stream-top"><img loading="lazy" src="assets/thumbs/'+st.id+'.jpg" alt="'+esc(st.title)+' のYouTubeサムネイル" width="480" height="360"><div class="stream-info"><span class="date">'+fmtDate(st.date)+'</span><h3>'+esc(st.title)+'</h3><span class="cnt">♪ '+st.count+'曲収録</span></div></div><div class="stream-actions"><button class="btn btn-line toggle" type="button" data-toggle="'+st.id+'" aria-expanded="false">セットリストを開く（'+st.count+'曲）</button><a class="btn btn-line" href="'+esc(st.url)+'" target="_blank" rel="noopener" aria-label="配信をYouTubeで開く">YouTube ↗</a></div><div class="setlist" id="set-'+st.id+'"><ol>'+list+'</ol></div></article>';
+}
+function renderStreams(){
+  const filtered=STREAMS.filter(s=>curYear==="すべて"||s.date.startsWith(curYear)).sort((a,b)=>b.date.localeCompare(a.date));
+  document.getElementById("streamCountLabel").textContent=filtered.length+" 件の配信（新しい順）";
+  streamList.innerHTML=filtered.slice(0,streamShown).map(streamHTML).join("");
+  moreStreams.hidden=filtered.length<=streamShown;
+  if(!moreStreams.hidden) moreStreams.textContent="さらに配信を表示（残り "+(filtered.length-streamShown)+" 件）";
+  bindToggles();
+}
+function bindToggles(){
+  streamList.querySelectorAll("[data-toggle]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const id=btn.getAttribute("data-toggle"); toggleStream(id, btn);
+    });
+  });
+}
+function toggleStream(id, btn){
+  const box=document.getElementById("set-"+id); if(!box) return;
+  const open=box.classList.toggle("open");
+  if(btn){ btn.setAttribute("aria-expanded", open); btn.textContent= open?"セットリストを閉じる":"セットリストを開く（"+streamById[id].count+"曲）"; }
+}
+moreStreams.addEventListener("click",()=>{ streamShown+=12; renderStreams(); });
+renderStreams();
+// pickup open button: ensure s054 visible then open
+document.querySelectorAll("[data-open-stream]").forEach(b=>b.addEventListener("click",()=>{
+  const id=b.getAttribute("data-open-stream");
+  curYear="すべて";
+  filtersEl.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x.getAttribute("data-year")==="すべて"?"true":"false"));
+  // show all so target exists
+  streamShown=STREAMS.length; renderStreams();
+  const el=document.getElementById("stream-"+id);
+  if(el){ const btn=el.querySelector("[data-toggle]"); toggleStream(id, btn); el.scrollIntoView({behavior:"smooth",block:"start"}); }
+}));
+// year bars (songs per year)
+(function(){
+  const byYear={}; SONGS.forEach(s=>{ const y=streamById[s.sid].date.slice(0,4); byYear[y]=(byYear[y]||0)+1; });
+  const streamCnt={}; STREAMS.forEach(s=>{ const y=s.date.slice(0,4); streamCnt[y]=(streamCnt[y]||0)+1; });
+  const max=Math.max(...Object.values(byYear));
+  const ys=Object.keys(byYear).sort();
+  document.getElementById("yearBars").innerHTML=ys.map(y=>'<div class="bar-row"><span>'+y+'年</span><span class="bar-track"><span class="bar-fill" style="display:block;width:'+Math.round(byYear[y]/max*100)+'%"></span></span><b>'+byYear[y]+'曲 ・ '+streamCnt[y]+'配信</b></div>').join("");
+})();
+document.getElementById("toTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+</script>
+</body>
+</html>
