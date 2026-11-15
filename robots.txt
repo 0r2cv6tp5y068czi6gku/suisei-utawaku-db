@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://sayakagaoqiao403-rgb.github.io/suisei-utawaku-db/sitemap.xml
+Sitemap: https://0r2cv6tp5y068czi6gku.github.io/suisei-utawaku-db/sitemap.xml
